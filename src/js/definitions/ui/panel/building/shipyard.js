@@ -46,7 +46,7 @@ class ui_panel_shipyard extends ui_panel {
 								'<dt>Defense</dt><dd>' + game.SHIPS[item].defense + '</dd>' +
 							'</dl>' +
 						'</div>' +
-						'<img data-handle="' + item + '" title="Recruit ' + game.SHIPS[item].name + '" class="tips recruit-ship" src="' + game.ASSETS_URL + 'images/assets/army/' + item.toLowerCase().replace(/ /g,"_") + '.png" />' +
+						'<img data-handle="' + item + '" title="Recruit ' + game.SHIPS[item].name + '" class="tips recruit-ship" src="' + game.ASSETS_URL + 'images/assets/navy/' + item.toLowerCase().replace(/ /g,"_") + '.png" />' +
 					'</fieldset>';
 			}
 			_t += '</div>';

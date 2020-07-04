@@ -415,7 +415,7 @@ class ui {
 	 * @returns {String}
 	 */
 	navy_img (name) {
-		return '<img class="tips small" title="' + game.SHIPS[name].name + '" src="' + game.ASSETS_URL + 'images/assets/army/' + name.toLowerCase().replace(/ /g,"_") + '.png" />';
+		return '<img class="tips small" title="' + game.SHIPS[name].name + '" src="' + game.ASSETS_URL + 'images/assets/navy/' + name.toLowerCase().replace(/ /g,"_") + '.png" />';
 	}
 
 	/**

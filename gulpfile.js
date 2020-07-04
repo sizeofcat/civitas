@@ -37,7 +37,7 @@ const errorHandler = (r) => {
 
 const browsersync = (done) => {
 	browserSync.init({
-		proxy: 'http://civitas.test',
+		proxy: 'https://civitas.test',
 		open: true,
 		injectChanges: true,
 		watchEvents: [
@@ -171,6 +171,7 @@ gulp.task('app', () => {
 		'src/js/objects/core/building.js',
 		'src/js/objects/core/battleground.js',
 		'src/js/objects/core/hero.js',
+		'src/js/objects/core/quest.js',
 		'src/js/objects/ui/controls/window.js',
 		'src/js/objects/ui/controls/modal.js',
 		'src/js/objects/ui/controls/panel.js',

@@ -15723,6 +15723,42 @@ class hero {
 }
 
 /**
+ * Quest object.
+ * 
+ * @param {Object} params
+ * @license GPL-3.0-or-later
+ * @class quest
+ * @returns {quest}
+ */
+class quest {
+
+	/**
+	 * Object constructor.
+	 * 
+	 * @private
+	 * @constructor
+	 * @returns {quest}
+	 * @param {Object} params
+	 */
+	constructor (params) {
+		this._core = params.core;
+		this.name = params.name;
+		this.description = params.description;
+		return this;
+	}
+
+	/**
+	 * Return a pointer to the game core.
+	 * 
+	 * @public
+	 * @returns {game}
+	 */
+	core () {
+		return this._core;
+	}
+}
+
+/**
  * Main Game window object.
  * 
  * @param {Object} params
@@ -16613,7 +16649,7 @@ class ui {
 	 * @returns {String}
 	 */
 	navy_img (name) {
-		return '<img class="tips small" title="' + game.SHIPS[name].name + '" src="' + game.ASSETS_URL + 'images/assets/army/' + name.toLowerCase().replace(/ /g,"_") + '.png" />';
+		return '<img class="tips small" title="' + game.SHIPS[name].name + '" src="' + game.ASSETS_URL + 'images/assets/navy/' + name.toLowerCase().replace(/ /g,"_") + '.png" />';
 	}
 
 	/**
@@ -20608,7 +20644,7 @@ class ui_panel_shipyard extends ui_panel {
 								'<dt>Defense</dt><dd>' + game.SHIPS[item].defense + '</dd>' +
 							'</dl>' +
 						'</div>' +
-						'<img data-handle="' + item + '" title="Recruit ' + game.SHIPS[item].name + '" class="tips recruit-ship" src="' + game.ASSETS_URL + 'images/assets/army/' + item.toLowerCase().replace(/ /g,"_") + '.png" />' +
+						'<img data-handle="' + item + '" title="Recruit ' + game.SHIPS[item].name + '" class="tips recruit-ship" src="' + game.ASSETS_URL + 'images/assets/navy/' + item.toLowerCase().replace(/ /g,"_") + '.png" />' +
 					'</fieldset>';
 			}
 			_t += '</div>';
