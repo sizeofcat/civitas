@@ -30,7 +30,7 @@ There is no set goal, game is played on an infinite-round basis and there is a s
 
 ## Playing
 
-In development, Civitas is using several assets that are copyrighted by [Bluebyte](https://www.bluebyte.com), so I cannot redistribute them with the game. In the future, the game will have a brand new set of graphics but for now those will be enough for testing. You can find a link to the said assets [here](). All the other game resources are freely distributed under the [GPLv3 license](license.md), same as the code.
+In development, Civitas is using several assets that are copyrighted by [Bluebyte](https://www.bluebyte.com), so I cannot redistribute them with the game. In the future, the game will have a brand new set of graphics but for now those will be enough for testing. You can find a link to the said assets [here](https://app.nihaocloud.com/f/01c8b5ec0dab45f39f66/?dl=1). All the other game resources are freely distributed under the [GPLv3 license](license.md), same as the code.
 
 ### 1. With Docker
 
@@ -140,6 +140,4 @@ The `music/track1.mp3` song is named __Glandula Pinealis__ by [Shantifax](https:
 | ![](docs/images/civitas-screenshot-16.jpg) | ![](docs/images/civitas-screenshot-17.jpg) | ![](docs/images/civitas-screenshot-18.jpg) |
 | ![](docs/images/civitas-screenshot-19.jpg) | ![](docs/images/civitas-screenshot-20.jpg) | ![](docs/images/civitas-screenshot-21.jpg) |
 | ![](docs/images/civitas-screenshot-22.jpg) | ![](docs/images/civitas-screenshot-23.jpg) | ![](docs/images/civitas-screenshot-24.jpg) |
-| ![](docs/images/civitas-screenshot-25.jpg) | ![](docs/images/civitas-screenshot-26.jpg) | ![](docs/images/civitas-screenshot-27.jpg) |
-| ![](docs/images/civitas-screenshot-28.jpg) | ![](docs/images/civitas-screenshot-29.jpg) | ![](docs/images/civitas-screenshot-30.jpg) |
-| ![](docs/images/civitas-screenshot-31.jpg) | ![](docs/images/civitas-screenshot-32.jpg) | ![](docs/images/civitas-screenshot-33.jpg) |
+| ![](docs/images/civitas-screenshot-25.jpg) | ![](docs/images/civitas-screenshot-26.jpg) | |
