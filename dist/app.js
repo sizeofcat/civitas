@@ -17,7 +17,7 @@ Array.prototype.findIndexByHandle = function (value) {
 };
 
 /**
- * Capitalize first letter of a string.
+ * Capitalise first letter of a string.
  *
  * @function capitalize
  * @returns {String}

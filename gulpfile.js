@@ -2,10 +2,7 @@ const gulp = require('gulp');
 const terser = require('gulp-terser');
 const sass = require('gulp-sass');
 const minifycss = require('gulp-uglifycss');
-const autoprefixer = require('gulp-autoprefixer');
-const mmq = require('gulp-merge-media-queries');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const filter = require('gulp-filter');
 const sourcemaps = require('gulp-sourcemaps');
@@ -15,14 +12,10 @@ const sort = require('gulp-sort');
 const cache = require('gulp-cache');
 const remember = require('gulp-remember');
 const plumber = require('gulp-plumber');
-const beep = require('beepbeep');
 const pkg = require('./package.json');
-const imagemin = require('gulp-imagemin');
 const header = require('gulp-header');
 const fs = require('fs');
-const jsdoc = require('gulp-jsdoc3');
 const replace = require('gulp-replace');
-const jsdoc_config = require('./jsdoc');
 
 const BROWSERS_LIST = [
 	'last 2 versions',
@@ -32,13 +25,13 @@ const BROWSERS_LIST = [
 
 const errorHandler = (r) => {
 	notify.onError('\n\n----- ERROR: <%= error.message %> -----\n')(r);
-	beep();
 };
 
 const browsersync = (done) => {
 	browserSync.init({
-		proxy: 'https://civitas.test',
 		open: true,
+		port:8080,
+		server: "./dist",
 		injectChanges: true,
 		watchEvents: [
 			'change',
@@ -77,13 +70,9 @@ gulp.task('css', () => {
 		.pipe(sourcemaps.init({
 			loadMaps: true
 		}))
-		.pipe(autoprefixer(BROWSERS_LIST))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('./dist/'))
 		.pipe(filter('**/*.css'))
-		.pipe(mmq({
-			log: true
-		}))
 		.pipe(browserSync.stream())
 		.pipe(rename({
 			suffix: '.min'
@@ -91,7 +80,7 @@ gulp.task('css', () => {
 		.pipe(minifycss({
 			maxLineLen: 10
 		}))
-		.pipe(header(fs.readFileSync('HEADER', 'utf8'), {
+		.pipe(header(fs.readFileSync('docs/header', 'utf8'), {
 			pkg
 		}))
 		.pipe(replace('__VERSION_NUMBER__', pkg.version + '.' + ((new Date()).getMonth() + 1) + '' + (new Date()).getDate() + '' + (new Date()).getFullYear()))
@@ -218,7 +207,7 @@ gulp.task('app', () => {
 			})
 		)
 		.pipe(terser())
-		.pipe(header(fs.readFileSync('HEADER', 'utf8'), {
+		.pipe(header(fs.readFileSync('docs/header', 'utf8'), {
 			pkg
 		}))
 		.pipe(replace('__VERSION_NUMBER__', pkg.version + '.' + ((new Date()).getMonth() + 1) + '' + (new Date()).getDate() + '' + (new Date()).getFullYear()))
@@ -226,53 +215,6 @@ gulp.task('app', () => {
 		.pipe(notify({
 			message: '\n\n----- Application libraries compiled -----\n',
 			onLast: true
-		}));
-});
-
-gulp.task('images', () => {
-	return gulp
-		.src('./images/**/*')
-		.pipe(
-			cache(
-				imagemin([
-					imagemin.gifsicle({
-						interlaced: true
-						}),
-					imagemin.jpegtran({
-						progressive: true
-						}),
-					imagemin.optipng({
-						optimizationLevel: 3
-					}),
-					imagemin.svgo({
-						plugins: [{
-							removeViewBox: true
-						}, {
-							cleanupIDs: false
-						}]
-					})
-				])
-			)
-		)
-		.pipe(gulp.dest('./dist/images/'))
-		.pipe(notify({
-			message: '\n\n----- Images compressed -----\n',
-			onLast: true
-		}));
-});
-
-gulp.task('doc', () => {
-	return gulp
-		.src([
-			'README.md',
-			'./src/**/*.js'
-		], {
-			read: false
-		})
-		.pipe(jsdoc(jsdoc_config))
-		.pipe(notify({
-				message: '\n\n----- Documentation generated -----\n',
-				onLast: true
 		}));
 });
 

@@ -1,5 +1,4 @@
-Civitas Code of Conduct
-=======================
+# Civitas Code of Conduct
 
 This is not a community project. This is my project. I know that will disappoint some people, but I do this for fun in my own spare time. If it stops being fun, I will stop working on it, which will pretty much kill the project. There are millions of projects in the world and the only reason they continue (if they actually do) is because the maintainers stubbornly stick at it.
 

@@ -6,6 +6,6 @@ node_modules
 dist/images/assets/**/*
 temp/**/*
 .DS_Store
-saves/*
+saves
 *.sublime-project
 *.sublime-workspace

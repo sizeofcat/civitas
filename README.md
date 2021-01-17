@@ -5,11 +5,9 @@ Civitas
 
 ## Description
 
-Civitas is a free-to-play strategy empire-building browser game written in Javascript with the help of the [jQuery library](https://jquery.org/). Players develop and maintain their settlement from initial village to a fully grown metropolis, influencing and conquering the neighbouring settlements.
+Civitas is a free-to-play strategy empire-building browser game written in Javascript with the help of the [jQuery library](https://jquery.org). Players develop and maintain their settlement from initial village to a fully grown metropolis, influencing and conquering the neighbouring settlements.
 
 There is no set goal, game is played on an infinite-round basis and there is a server component planned. The focus of the game is to manufacture and trade resources in order to raise the level of your city.
-
-<!--more-->
 
 ## Features
 
@@ -32,18 +30,17 @@ There is no set goal, game is played on an infinite-round basis and there is a s
 
 ## Playing
 
-In development, Civitas is using several assets that are copyrighted by [Bluebyte](https://www.bluebyte.com), so I cannot redistribute them with the game. In the future, the game will have a brand new set of graphics but for now those will be enough for testing. You can find a link to the said assets [in this Gitee](https://gitee.com/sizeofcat/civitas/issues/IZBLB) or [this GitHub issue](https://github.com/sizeofcat/civitas/issues/1#issuecomment-513243623). All the other game resources are freely distributed under the GPLv3 license, same as the code.
-
+In development, Civitas is using several assets that are copyrighted by [Bluebyte](https://www.bluebyte.com), so I cannot redistribute them with the game. In the future, the game will have a brand new set of graphics but for now those will be enough for testing. You can find a link to the said assets [here](). All the other game resources are freely distributed under the [GPLv3 license](license.md), same as the code.
 
 ### 1. With Docker
 
-```
+```bash
 $ docker-compose up --build
 ```
 
 And point your browser to `http://localhost` (or even better, add the line below to your `/etc/hosts` file and browse `http://civitas.test`.
 
-```
+```txt
 127.0.0.1	civitas.test
 ```
 
@@ -55,13 +52,13 @@ Choose an archive format from below, download and uncompress it. Point your brow
 
 Start by installing all the prerequisites:
 
-```
+```bash
 $ npm install
 ```
 
-Run the main script that will load gulp and proxy the requests from `civitas.test` to `localhost:3000`.
+Run the main script that will load gulp and open `http://localhost:8080` in your web browser.
 
-```
+```bash
 $ npm start
 ```
 
@@ -74,9 +71,9 @@ $ npm start
 
 ## License
 
-Civitas is written by sizeof(cat) <sizeofcat AT riseup DOT net> and distributed under the [GPLv3 license](LICENSE).
+Civitas is written by sizeof(cat) and distributed under the [GPLv3 license](license.md).
 
-```
+```txt
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -99,7 +96,7 @@ I am always thrilled to receive pull requests, and do my best to process them as
 
 If your pull request is not accepted on the first try, don't be discouraged! If there's a problem with the implementation, hopefully you received feedback on what to improve.
 
-Always sign your commits and make sure you read the [Coding Style](CODING-STYLE.md) and the [Code of Conduct](CODE-OF-CONDUCT.md).
+Always sign your commits and make sure you read the [Coding Style](docs/coding_style.md) and the [Code of Conduct](docs/code_of_conduct.md).
 
 ## Source code
 
@@ -107,16 +104,20 @@ Civitas is written using Javascript, has ~22000 lines of code (including comment
 
 GitHub:
 
-`git clone git@github.com/sizeofcat/civitas.git`
+```bash
+$ git clone git@github.com/sizeofcat/civitas.git
+```
 
 Gitee
 
-`git clone git@gitee.com/sizeofcat/civitas.git`
+```bash
+git clone git@gitee.com/sizeofcat/civitas.git
+```
 
 ## Dependencies
 
-- [jQuery 3.2.1](https://jquery.com/)
-- [jQuery UI 1.11.2](https://jqueryui.com/)
+- [jQuery 3.4.1](https://jquery.com)
+- [jQuery UI 1.11.2](https://jqueryui.com)
 - [jQuery Tipsy 1.0.0a](https://github.com/jaz303/tipsy)
 - [jQuery scrollTo 1.4.14](https://github.com/flesler/jquery.scrollTo)
 - [CryptoJS 3.1.9](https://github.com/brix/crypto-js)
@@ -142,4 +143,3 @@ The `music/track1.mp3` song is named __Glandula Pinealis__ by [Shantifax](https:
 | ![](docs/images/civitas-screenshot-25.jpg) | ![](docs/images/civitas-screenshot-26.jpg) | ![](docs/images/civitas-screenshot-27.jpg) |
 | ![](docs/images/civitas-screenshot-28.jpg) | ![](docs/images/civitas-screenshot-29.jpg) | ![](docs/images/civitas-screenshot-30.jpg) |
 | ![](docs/images/civitas-screenshot-31.jpg) | ![](docs/images/civitas-screenshot-32.jpg) | ![](docs/images/civitas-screenshot-33.jpg) |
-
