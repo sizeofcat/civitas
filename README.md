@@ -132,7 +132,7 @@ The `music/track1.mp3` song is named __Glandula Pinealis__ by [Shantifax](https:
 
 | | | |
 |---|---|---|
-| ![](docs/images/civitas-screenshot-1.jpg) | ![](docs/images/civitas-screenshot-34.jpg) | ![](docs/images/civitas-screenshot-3.jpg) |
+| ![](docs/images/civitas-screenshot-1.jpg) | ![](docs/images/civitas-screenshot-2.jpg) | ![](docs/images/civitas-screenshot-3.jpg) |
 | ![](docs/images/civitas-screenshot-4.jpg) | ![](docs/images/civitas-screenshot-5.jpg) | ![](docs/images/civitas-screenshot-6.jpg) |
 | ![](docs/images/civitas-screenshot-7.jpg) | ![](docs/images/civitas-screenshot-8.jpg) | ![](docs/images/civitas-screenshot-9.jpg) |
 | ![](docs/images/civitas-screenshot-10.jpg) | ![](docs/images/civitas-screenshot-11.jpg) | ![](docs/images/civitas-screenshot-12.jpg) |
