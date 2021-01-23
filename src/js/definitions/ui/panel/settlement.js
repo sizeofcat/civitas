@@ -187,6 +187,8 @@ class ui_panel_settlement extends ui_panel {
 				sett_type_text = 'Village';
 			} else if (settlement.is_camp()) {
 				sett_type_text = 'Raider Camp';
+			} else if (settlement.is_ruins()) {
+				sett_type_text = 'Ruins';
 			}
 			$(this.handle + ' #tab-info').empty().append('' +
 				'<img class="avatar right" src="' + game.ASSETS_URL + 'images/assets/avatars/avatar' + settlement.ruler().avatar + '.png" />' +

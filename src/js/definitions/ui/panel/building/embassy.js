@@ -63,7 +63,8 @@ class ui_panel_embassy extends ui_panel {
 					'</tr>' +
 					'</thead>';
 				for (let i = 1; i < settlements.length; i++) {
-					_t += '<tr>' +
+					if (!settlements[i].is_ruins()) {
+						_t += '<tr>' +
 							'<td>' +
 								'<a data-id="' + settlements[i].id() + '" title="View info about this settlement." class="tips view" href="#">' + settlements[i].name() + '</a> ' +
 							'</td>' +
@@ -83,6 +84,7 @@ class ui_panel_embassy extends ui_panel {
 								'<p>' + settlements[i].personality().name + '</p>' +
 							'</td>' +
 						'</tr>';
+					}
 				}
 				_t += '<tfoot>' +
 					'<tr>' +

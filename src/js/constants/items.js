@@ -518,7 +518,7 @@ game.ITEM_WEAPON_DAGGER_WICKED = {
 		speed: 1.60
 	},
 	slot: game.ITEM_SLOT_ANY_HAND,
-	type: game.WEAPON_TYPE_MELEE,
+	type: game.ITEM_TYPE_WEAPON,
 	quality: game.ITEM_QUALITY_COMMON,
 	cost: 1
 };
@@ -532,7 +532,7 @@ game.ITEM_WEAPON_DAGGER_DIRK = {
 		speed: 1.60
 	},
 	slot: game.ITEM_SLOT_ANY_HAND,
-	type: game.WEAPON_TYPE_MELEE,
+	type: game.ITEM_TYPE_WEAPON,
 	quality: game.ITEM_QUALITY_COMMON,
 	cost: 1.2
 };
@@ -546,7 +546,7 @@ game.ITEM_WEAPON_AXE_SMALL = {
 		speed: 1.60
 	},
 	slot: game.ITEM_SLOT_ANY_HAND,
-	type: game.WEAPON_TYPE_MELEE,
+	type: game.ITEM_TYPE_WEAPON,
 	quality: game.ITEM_QUALITY_COMMON,
 	cost: 2.2
 };
@@ -559,8 +559,8 @@ game.ITEM_WEAPON_SWORD_SMALL = {
 		damageMax: 4,
 		speed: 1.60
 	},
-	slot: game.ITEM_SLOT_ANY_HAND,
-	type: game.WEAPON_TYPE_MELEE,
+	slot: game.ITEM_SLOT_MAIN_HAND,
+	type: game.ITEM_TYPE_WEAPON,
 	quality: game.ITEM_QUALITY_COMMON,
 	cost: 2.2
 };
@@ -805,5 +805,87 @@ game.ITEM_GAUNTLETS_OF_GHASTLY_GLARE = {
 	type: game.ITEM_TYPE_ARMOR,
 	secondary_type: game.ARMOR_TYPE_PLATE,
 	quality: game.ITEM_QUALITY_EPIC,
+	cost: 1
+};
+
+game.ITEM_ANKH_OF_RA = {
+	name: 'Ankh of Ra',
+	id: 19,
+	stats: {
+		armor: 1,
+		strength: 5,
+		stamina: 20,
+		intellect: 5
+	},
+	slot: game.ITEM_SLOT_NECK,
+	type: game.ITEM_TYPE_ARMOR,
+	secondary_type: game.ARMOR_TYPE_PLATE,
+	quality: game.ITEM_QUALITY_RARE,
+	cost: 1
+};
+
+game.ITEM_SAND_SLIPPERS = {
+	name: 'Sand Slippers',
+	id: 20,
+	stats: {
+		armor: 5,
+		strength: 9,
+		intellect: 6
+	},
+	slot: game.ITEM_SLOT_FEET,
+	type: game.ITEM_TYPE_ARMOR,
+	secondary_type: game.ARMOR_TYPE_PLATE,
+	quality: game.ITEM_QUALITY_RARE,
+	cost: 1
+};
+
+game.ITEM_BAND_IT = {
+	name: 'Band It',
+	id: 21,
+	stats: {
+		armor: 2,
+		stamina: 5,
+		strength: 1,
+		agility: 1,
+		intellect: 4,
+		spirit: 5
+	},
+	slot: game.ITEM_SLOT_RING,
+	type: game.ITEM_TYPE_ARMOR,
+	secondary_type: game.ARMOR_TYPE_PLATE,
+	quality: game.ITEM_QUALITY_EPIC,
+	cost: 1
+};
+
+game.ITEM_TUTANKHAMUN_KOPESH = {
+	name: 'Tutankhamun`s Kopesh',
+	id: 22,
+	stats: {
+		damageMin: 30,
+		damageMax: 55,
+		speed: 2.0,
+		agility: 30,
+		stamina: 10,
+		strength: 10
+	},
+	slot: game.ITEM_SLOT_MAIN_HAND,
+	type: game.ITEM_TYPE_WEAPON,
+	secondary_type: game.WEAPON_TYPE_MELEE,
+	quality: game.ITEM_QUALITY_LEGENDARY,
+	cost: 1
+};
+
+game.ITEM_VALORANT_SHOULDERPADS = {
+	name: 'Valorant`s Shoulderpads',
+	id: 23,
+	stats: {
+		armor: 20,
+		agility: 20,
+		stamina: 15
+	},
+	slot: game.ITEM_SLOT_SHOULDER,
+	type: game.ITEM_TYPE_ARMOR,
+	secondary_type: game.ARMOR_TYPE_PLATE,
+	quality: game.ITEM_QUALITY_RARE,
 	cost: 1
 };

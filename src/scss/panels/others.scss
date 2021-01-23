@@ -13,7 +13,7 @@
 	max-height: 600px;
 }
 #panel-academy {
-	max-height: 700px;
+	max-height: 800px;
 	max-width: 620px;
 	width: 620px;
 }
@@ -156,7 +156,7 @@
 	text-align: center;
 	margin: 0 4px 4px 0;
 	position: relative;
-	box-shadow: inset 0 0 3px 0 hsla(0, 0%, 0%, 0.75);
+	box-shadow: inset 0 0 3px 0 $white;
 	font-size: 34px;
 }
 

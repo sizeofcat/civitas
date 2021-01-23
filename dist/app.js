@@ -4674,6 +4674,23 @@ game.TECHNOLOGIES = [
 			}
 		}
 	}, {
+		/* @todo */
+		name: 'Militia',
+		handle: 'militia',
+		description: 'Allows you to freely recruit 10 militia men each year.',
+		duration: 30,
+		cost: {
+			research: 500,
+			coins: 100000,
+			provisions: 100,
+			weapons: 20
+		},
+		effect: {
+			buildings: {
+				tavern: 10
+			}
+		}
+	}, {
 		name: 'Minerals',
 		handle: 'minerals',
 		description: 'Digging deeper into the mountains, your settlers will find more minerals if you research this technology.',
@@ -9912,7 +9929,7 @@ game.ITEM_WEAPON_DAGGER_WICKED = {
 		speed: 1.60
 	},
 	slot: game.ITEM_SLOT_ANY_HAND,
-	type: game.WEAPON_TYPE_MELEE,
+	type: game.ITEM_TYPE_WEAPON,
 	quality: game.ITEM_QUALITY_COMMON,
 	cost: 1
 };
@@ -9926,7 +9943,7 @@ game.ITEM_WEAPON_DAGGER_DIRK = {
 		speed: 1.60
 	},
 	slot: game.ITEM_SLOT_ANY_HAND,
-	type: game.WEAPON_TYPE_MELEE,
+	type: game.ITEM_TYPE_WEAPON,
 	quality: game.ITEM_QUALITY_COMMON,
 	cost: 1.2
 };
@@ -9940,7 +9957,7 @@ game.ITEM_WEAPON_AXE_SMALL = {
 		speed: 1.60
 	},
 	slot: game.ITEM_SLOT_ANY_HAND,
-	type: game.WEAPON_TYPE_MELEE,
+	type: game.ITEM_TYPE_WEAPON,
 	quality: game.ITEM_QUALITY_COMMON,
 	cost: 2.2
 };
@@ -9953,8 +9970,8 @@ game.ITEM_WEAPON_SWORD_SMALL = {
 		damageMax: 4,
 		speed: 1.60
 	},
-	slot: game.ITEM_SLOT_ANY_HAND,
-	type: game.WEAPON_TYPE_MELEE,
+	slot: game.ITEM_SLOT_MAIN_HAND,
+	type: game.ITEM_TYPE_WEAPON,
 	quality: game.ITEM_QUALITY_COMMON,
 	cost: 2.2
 };
@@ -10202,6 +10219,88 @@ game.ITEM_GAUNTLETS_OF_GHASTLY_GLARE = {
 	cost: 1
 };
 
+game.ITEM_ANKH_OF_RA = {
+	name: 'Ankh of Ra',
+	id: 19,
+	stats: {
+		armor: 1,
+		strength: 5,
+		stamina: 20,
+		intellect: 5
+	},
+	slot: game.ITEM_SLOT_NECK,
+	type: game.ITEM_TYPE_ARMOR,
+	secondary_type: game.ARMOR_TYPE_PLATE,
+	quality: game.ITEM_QUALITY_RARE,
+	cost: 1
+};
+
+game.ITEM_SAND_SLIPPERS = {
+	name: 'Sand Slippers',
+	id: 20,
+	stats: {
+		armor: 5,
+		strength: 9,
+		intellect: 6
+	},
+	slot: game.ITEM_SLOT_FEET,
+	type: game.ITEM_TYPE_ARMOR,
+	secondary_type: game.ARMOR_TYPE_PLATE,
+	quality: game.ITEM_QUALITY_RARE,
+	cost: 1
+};
+
+game.ITEM_BAND_IT = {
+	name: 'Band It',
+	id: 21,
+	stats: {
+		armor: 2,
+		stamina: 5,
+		strength: 1,
+		agility: 1,
+		intellect: 4,
+		spirit: 5
+	},
+	slot: game.ITEM_SLOT_RING,
+	type: game.ITEM_TYPE_ARMOR,
+	secondary_type: game.ARMOR_TYPE_PLATE,
+	quality: game.ITEM_QUALITY_EPIC,
+	cost: 1
+};
+
+game.ITEM_TUTANKHAMUN_KOPESH = {
+	name: 'Tutankhamun`s Kopesh',
+	id: 22,
+	stats: {
+		damageMin: 30,
+		damageMax: 55,
+		speed: 2.0,
+		agility: 30,
+		stamina: 10,
+		strength: 10
+	},
+	slot: game.ITEM_SLOT_MAIN_HAND,
+	type: game.ITEM_TYPE_WEAPON,
+	secondary_type: game.WEAPON_TYPE_MELEE,
+	quality: game.ITEM_QUALITY_LEGENDARY,
+	cost: 1
+};
+
+game.ITEM_VALORANT_SHOULDERPADS = {
+	name: 'Valorant`s Shoulderpads',
+	id: 23,
+	stats: {
+		armor: 20,
+		agility: 20,
+		stamina: 15
+	},
+	slot: game.ITEM_SLOT_SHOULDER,
+	type: game.ITEM_TYPE_ARMOR,
+	secondary_type: game.ARMOR_TYPE_PLATE,
+	quality: game.ITEM_QUALITY_RARE,
+	cost: 1
+};
+
 /**
  * Warrior class
  *
@@ -10381,6 +10480,12 @@ game.HEROES = [
 		},
 		class: game.HERO_CLASS_PRIEST,
 		items: [
+			game.ITEM_ANKH_OF_RA,
+			game.ITEM_TUTANKHAMUN_KOPESH,
+			game.ITEM_WEAPON_BUCKLER_SMALL,
+			game.ITEM_SAND_SLIPPERS,
+			game.ITEM_BAND_IT,
+			game.ITEM_VALORANT_SHOULDERPADS
 		],
 		backpack: [
 		]
@@ -17944,6 +18049,8 @@ class ui_panel_settlement extends ui_panel {
 				sett_type_text = 'Village';
 			} else if (settlement.is_camp()) {
 				sett_type_text = 'Raider Camp';
+			} else if (settlement.is_ruins()) {
+				sett_type_text = 'Ruins';
 			}
 			$(this.handle + ' #tab-info').empty().append('' +
 				'<img class="avatar right" src="' + game.ASSETS_URL + 'images/assets/avatars/avatar' + settlement.ruler().avatar + '.png" />' +
@@ -20817,7 +20924,8 @@ class ui_panel_embassy extends ui_panel {
 					'</tr>' +
 					'</thead>';
 				for (let i = 1; i < settlements.length; i++) {
-					_t += '<tr>' +
+					if (!settlements[i].is_ruins()) {
+						_t += '<tr>' +
 							'<td>' +
 								'<a data-id="' + settlements[i].id() + '" title="View info about this settlement." class="tips view" href="#">' + settlements[i].name() + '</a> ' +
 							'</td>' +
@@ -20837,6 +20945,7 @@ class ui_panel_embassy extends ui_panel {
 								'<p>' + settlements[i].personality().name + '</p>' +
 							'</td>' +
 						'</tr>';
+					}
 				}
 				_t += '<tfoot>' +
 					'<tr>' +

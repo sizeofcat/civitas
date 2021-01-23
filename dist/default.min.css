@@ -3,7 +3,7 @@
  *
  * @author sizeof(cat) <sizeofcat AT riseup.net>
  * @copyright 2012 - 2021 sizeof(cat)
- * @version 0.3.0.1172021
+ * @version 0.3.0.1232021
  * @license GPL-3.0-or-later
  */
  .scale{animation:scale-frames linear 1s;animation-iteration-count:1;transform-origin:50% 50%}
@@ -270,12 +270,12 @@ table tr td:last-child a:hover{border:1px solid #442813;background-image:linear-
 .tipsy-se .tipsy-arrow{bottom:0;right:10px;border-top-style:solid;border-bottom:0;border-left-color:transparent;border-right-color:transparent}
 .tipsy-e .tipsy-arrow{right:0;top:50%;margin-top:-5px;border-left-style:solid;border-right:0;border-top-color:transparent;border-bottom-color:transparent}
 .tipsy-w .tipsy-arrow{left:0;top:50%;margin-top:-5px;border-right-style:solid;border-left:0;border-top-color:transparent;border-bottom-color:transparent}
-.tipsy.item .tipsy-inner{background-color:#4e2c12;opacity:.98;color:white}
-.tipsy.item .tipsy-arrow{border:5px dashed #4e2c12}
-.tipsy.item .tipsy-arrow-n{border-bottom-color:#4e2c12}
-.tipsy.item .tipsy-arrow-s{border-top-color:#4e2c12}
-.tipsy.item .tipsy-arrow-e{border-left-color:#4e2c12}
-.tipsy.item .tipsy-arrow-w{border-right-color:#4e2c12}
+.tipsy.item .tipsy-inner{background-color:black;opacity:.99;color:white;box-shadow:0 0 5px black}
+.tipsy.item .tipsy-arrow{border:5px dashed black}
+.tipsy.item .tipsy-arrow-n{border-bottom-color:black}
+.tipsy.item .tipsy-arrow-s{border-top-color:black}
+.tipsy.item .tipsy-arrow-e{border-left-color:black}
+.tipsy.item .tipsy-arrow-w{border-right-color:black}
 .tipsy.item h4{font-size:14px;padding:0;margin:0 0 10px 0}
 .tipsy.item span.flavour{font-style:italic;color:#ffd000}
 .ui .panel{position:fixed;top:30%;left:30%;z-index:99997;background-color:#150f0c;min-width:220px;max-width:360px;min-height:100px;max-height:460px;color:#fff;padding:20px;box-shadow:0 0 10px black}
@@ -342,7 +342,7 @@ table tr td:last-child a:hover{border:1px solid #442813;background-image:linear-
 .ui .panel .preview-image img{max-width:100%;max-height:200px;width:auto;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
 #panel-new-spy,#panel-new-scout,#panel-new-caravan{max-width:660px;max-height:600px;width:280px}
 #panel-new-army{max-width:660px;max-height:600px}
-#panel-academy{max-height:700px;max-width:620px;width:620px}
+#panel-academy{max-height:800px;max-width:620px;width:620px}
 #panel-academy .column-left{width:290px;max-height:400px;overflow:auto;margin-top:10px;float:left}
 #panel-academy .column-right{width:298px;float:left;margin-left:10px}
 #panel-academy .technology{cursor:pointer;float:left;margin:4px}
@@ -366,7 +366,7 @@ table tr td:last-child a:hover{border:1px solid #442813;background-image:linear-
 #panel-tavern .hero-list{width:70px;padding:10px 20px}
 #panel-tavern .hero-info{width:300px;padding:20px}
 #panel-tavern .hero-items{width:160px;padding:0}
-#panel-tavern .hero-items .slot{width:46px;height:50px;font-size:11px;float:left;text-align:center;margin:0 4px 4px 0;position:relative;box-shadow:inset 0 0 3px 0 rgba(0,0,0,0.75);font-size:34px}
+#panel-tavern .hero-items .slot{width:46px;height:50px;font-size:11px;float:left;text-align:center;margin:0 4px 4px 0;position:relative;box-shadow:inset 0 0 3px 0 white;font-size:34px}
 #panel-tavern .hero-info h3{margin:0 0 10px 0}
 #panel-campaign{min-width:400px}
 #panel-place{width:490px;max-width:490px;max-height:600px;height:auto}

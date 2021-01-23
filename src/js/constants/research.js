@@ -159,6 +159,23 @@ game.TECHNOLOGIES = [
 			}
 		}
 	}, {
+		/* @todo */
+		name: 'Militia',
+		handle: 'militia',
+		description: 'Allows you to freely recruit 10 militia men each year.',
+		duration: 30,
+		cost: {
+			research: 500,
+			coins: 100000,
+			provisions: 100,
+			weapons: 20
+		},
+		effect: {
+			buildings: {
+				tavern: 10
+			}
+		}
+	}, {
 		name: 'Minerals',
 		handle: 'minerals',
 		description: 'Digging deeper into the mountains, your settlers will find more minerals if you research this technology.',

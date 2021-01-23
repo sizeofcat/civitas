@@ -124,29 +124,30 @@
 }
 
 .tipsy.item .tipsy-inner {
-	background-color: $main;
-	opacity: 0.98;
+	background-color: $black;
+	opacity: 0.99;
 	color: $white;
+	box-shadow: 0 0 5px $black;
 }
 
 .tipsy.item .tipsy-arrow {
-	border: 5px dashed $main;
+	border: 5px dashed $black;
 }
 
 .tipsy.item .tipsy-arrow-n {
-	border-bottom-color: $main;
+	border-bottom-color: $black;
 }
 
 .tipsy.item .tipsy-arrow-s {
-	border-top-color: $main;
+	border-top-color: $black;
 }
 
 .tipsy.item .tipsy-arrow-e {
-	border-left-color: $main;
+	border-left-color: $black;
 }
 
 .tipsy.item .tipsy-arrow-w {
-	border-right-color: $main;
+	border-right-color: $black;
 }
 
 .tipsy.item h4 {

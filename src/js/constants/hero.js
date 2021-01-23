@@ -177,6 +177,12 @@ game.HEROES = [
 		},
 		class: game.HERO_CLASS_PRIEST,
 		items: [
+			game.ITEM_ANKH_OF_RA,
+			game.ITEM_TUTANKHAMUN_KOPESH,
+			game.ITEM_WEAPON_BUCKLER_SMALL,
+			game.ITEM_SAND_SLIPPERS,
+			game.ITEM_BAND_IT,
+			game.ITEM_VALORANT_SHOULDERPADS
 		],
 		backpack: [
 		]
