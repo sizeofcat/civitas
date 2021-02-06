@@ -32,7 +32,7 @@ There is no set goal, game is played on an infinite-round basis and there is a s
 
 You can [play the game here](https://sizeof.cat/project/software/play-civitas/) but be aware of the fact that it's not synced to the latest git changed.
 
-In development, Civitas is using several assets that are copyrighted by [Bluebyte](https://www.bluebyte.com), so I cannot redistribute them with the game. In the future, the game will have a brand new set of graphics but for now those will be enough for testing. You can find a link to the said assets [here](https://app.nihaocloud.com/f/01c8b5ec0dab45f39f66/?dl=1) (extract the contents of the `civitas-assets.zip` file into your `dist/images/` directory). All the other game resources are freely distributed under the [GPLv3 license](license.md), same as the code.
+In development, Civitas is using several assets that are copyrighted by [Bluebyte](https://www.bluebyte.com), so I cannot redistribute them with the game. In the future, the game will have a brand new set of graphics but for now those will be enough for testing. You can find a link to the said assets [here](https://app.nihaocloud.com/f/01c8b5ec0dab45f39f66/?dl=1) (extract the contents of the `civitas-assets.zip` file into your `dist/images/` directory). All the other game resources are freely distributed under the [GPLv3 license](LICENSE.md), same as the code.
 
 ### 1. With Docker
 
@@ -73,7 +73,7 @@ $ npm start
 
 ## License
 
-Civitas is written by sizeof(cat) and distributed under the [GPLv3 license](license.md).
+Civitas is written by sizeof(cat) and distributed under the [GPLv3 license](LICENSE.md).
 
 ```txt
 This program is free software: you can redistribute it and/or modify
@@ -98,7 +98,7 @@ I am always thrilled to receive pull requests, and do my best to process them as
 
 If your pull request is not accepted on the first try, don't be discouraged! If there's a problem with the implementation, hopefully you received feedback on what to improve.
 
-Always sign your commits and make sure you read the [Coding Style](docs/coding_style.md) and the [Code of Conduct](docs/code_of_conduct.md).
+Always sign your commits and make sure you read the [Coding Style](docs/CODING_STYLE.md) and the [Code of Conduct](docs/CODE_OF_CONDUCT.md).
 
 ## Source code
 
