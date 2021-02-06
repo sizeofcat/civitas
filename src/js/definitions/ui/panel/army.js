@@ -33,7 +33,10 @@ class ui_panel_army extends ui_panel {
 				tabs.push('Ships');
 			}
 			$(this.handle + ' section').append(core.ui().tabs(tabs));
-			$(this.handle + ' #tab-info').append('<img class="avatar right" src="' + game.ASSETS_URL + 'images/assets/emblems/' + ((typeof army.icon !== 'undefined') ? army.icon : '22') + '.png" />' + '<p>' + army.description + '</p>');
+			$(this.handle + ' #tab-info').append('<img class="avatar right" src="' + 
+				game.ASSETS_URL + 'images/assets/emblems/' +
+				((typeof army.icon !== 'undefined') ? army.icon : '22') +
+				'.png" />' + '<p>' + army.description + '</p>');
 			if (my_settlement.num_soldiers(army.army) > 0) {
 				$(this.handle + ' #tab-soldiers').append(core.ui().army_list(army.army));
 			}

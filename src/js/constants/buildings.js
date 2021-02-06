@@ -165,7 +165,8 @@ game.BUILDINGS = [
 	{
 		name: 'Marketplace',
 		handle: 'marketplace',
-		description: 'The Marketplace is the main building of your settlement and provides a place for the settlers to gather. It cannot be demolished.',
+		description: 'The Marketplace is the main building of your settlement and ' +
+			'provides a place for the settlers to gather. It cannot be demolished.',
 		storage: 50000,
 		is_municipal: true,
 		levels: 5,
@@ -187,7 +188,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Warehouse',
 		handle: 'warehouse',
-		description: 'The Warehouse is a trade building that provides market carts that pick up goods from production buildings. A Warehouse also adds extra storage space for the materials in your city.',
+		description: 'The Warehouse is a trade building that provides market ' +
+			'carts that pick up goods from production buildings. A Warehouse also ' +
+			'adds extra storage space for the materials in your city.',
 		storage: 100000,
 		levels: 10,
 		visible_upgrades: true,
@@ -209,7 +212,10 @@ game.BUILDINGS = [
 	}, {
 		name: 'Church',
 		handle: 'church',
-		description: 'A Church provides a massive fame boost to your settlement by using coins and converting them to fame, as well as providing faith for free. Faith allows you to choose a religion for your settlement.',
+		description: 'A Church provides a massive fame boost to your ' +
+			'settlement by using coins and converting them to fame, as well ' +
+			'as providing faith for free. Faith allows you to choose a ' +
+			'religion for your settlement.',
 		is_municipal: true,
 		levels: 3,
 		large: true,
@@ -237,7 +243,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Trading Post',
 		handle: 'tradingpost',
-		description: 'The Trading Post is a merchant building that allows you to trade resources with the other settlements in the world. Also allows you to use the powerful Auctioneer.',
+		description: 'The Trading Post is a merchant building that allows ' +
+			'you to trade resources with the other settlements in the world. ' +
+			'Also allows you to use the powerful Auctioneer.',
 		is_municipal: true,
 		storage: 10000,
 		visible_upgrades: true,
@@ -258,7 +266,10 @@ game.BUILDINGS = [
 	}, {
 		name: 'Academy',
 		handle: 'academy',
-		description: 'The Academy provides a minor amount of fame each day as well as research for this settlement at the expense of coins. All technologies will be researched here by your settlement`s scholars.',
+		description: 'The Academy provides a minor amount of fame each day as ' +
+			'well as research for this settlement at the expense of coins. ' +
+			'All technologies will be researched here by your ' +
+			'settlement`s scholars.',
 		is_municipal: true,
 		visible_upgrades: true,
 		large: true,
@@ -286,7 +297,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Embassy',
 		handle: 'embassy',
-		description: 'An Embassy is required to propose pacts, declare war, send spies to other settlements, basically any diplomacy.',
+		description: 'An Embassy is required to propose pacts, declare war, ' +
+			'send spies to other settlements, basically any diplomacy.',
 		is_municipal: true,
 		large: true,
 		levels: 3,
@@ -313,7 +325,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Provision House',
 		handle: 'provisions',
-		description: 'The Provision House requires various goods to produce provisions for military units and expeditions.',
+		description: 'The Provision House requires various goods to produce ' +
+			'provisions for military units and expeditions.',
 		levels: 3,
 		position: {
 			x: 290,
@@ -341,7 +354,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Tavern',
 		handle: 'tavern',
-		description: 'The Tavern is the place where heroes of the known (and unknown) world hang around. If you are looking to recruit Achilles, build a Tavern and he might show up.',
+		description: 'The Tavern is the place where heroes of the known (and ' +
+			'unknown) world hang around. If you are looking to recruit ' +
+			'Achilles, build a Tavern and he might show up.',
 		is_municipal: true,
 		levels: 3,
 		position: {
@@ -371,7 +386,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Shipyard',
 		handle: 'shipyard',
-		description: 'The Shipyard helps you expand your settlement overseas by housing your ships and providing you with fish, oil and an ultra-small chance to gather pearls.',
+		description: 'The Shipyard helps you expand your settlement overseas by ' +
+			'housing your ships and providing you with fish, oil and an ' +
+			'ultra-small chance to gather pearls.',
 		large: true,
 		levels: 5,
 		position: {
@@ -400,7 +417,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Barracks',
 		handle: 'barracks',
-		description: 'The Barracks is your main base of defense and attack. If you plan on going to war, you will need one. It also raises your settlement`s prestige.',
+		description: 'The Barracks is your main base of defense and attack. ' +
+			'If you plan on going to war, you will need one. It also raises ' +
+			'your settlement`s prestige.',
 		levels: 5,
 		visible_upgrades: true,
 		large: true,
@@ -427,7 +446,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Castle',
 		handle: 'castle',
-		description: 'The Castle is your main base of operations. It houses your settlement`s soldiers and provides you with prestige and some extra fame.',
+		description: 'The Castle is your main base of operations. It houses ' +
+			'your settlement`s soldiers and provides you with prestige and ' +
+			'some extra fame.',
 		is_municipal: true,
 		large: true,
 		levels: 2,
@@ -462,7 +483,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Lumberjack',
 		handle: 'lumberjack',
-		description: 'A Lumberjack provides you with wood which you can use for creating additional buildings, resources or sell to other settlements.',
+		description: 'A Lumberjack provides you with wood which you can ' +
+			'use for creating additional buildings, resources or sell to ' +
+			'other settlements.',
 		levels: 5,
 		position: {
 			x: 1840,
@@ -481,7 +504,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Carpenter',
 		handle: 'carpenter',
-		description: 'The Carpenter processes the wood from the Lumberjack into wood planks that are required for more advanced buildings.',
+		description: 'The Carpenter processes the wood from the Lumberjack ' +
+			'into wood planks that are required for more advanced buildings.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -505,7 +529,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Stone Quarry',
 		handle: 'stonequarry',
-		description: 'A Stone Quarry produces stone blocks that are essential for the construction of any settlement`s buildings.',
+		description: 'A Stone Quarry produces stone blocks that are essential ' +
+			'for the construction of any settlement`s buildings.',
 		visible_upgrades: true,
 		levels: 6,
 		position: {
@@ -530,7 +555,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Gold Mine',
 		handle: 'goldmine',
-		description: 'The Gold Mine extracts gold ore, that can be smelted later into gold bars.',
+		description: 'The Gold Mine extracts gold ore, that can be smelted ' +
+			'later into gold bars.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -555,7 +581,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Coal Mine',
 		handle: 'coalmine',
-		description: 'The Coal Mine extracts coal from the mountains you own (provided you own some).',
+		description: 'The Coal Mine extracts coal from the mountains you ' +
+			'own (provided you own some).',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -580,7 +607,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Iron Mine',
 		handle: 'ironmine',
-		description: 'The Iron Mine extracts iron ore, that can be smelted later into iron bars.',
+		description: 'The Iron Mine extracts iron ore, that can be smelted ' +
+			'later into iron bars.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -626,7 +654,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Clay Mine',
 		handle: 'claymine',
-		description: 'The Clay Mine produces clay which is required later for bricks and pottery.',
+		description: 'The Clay Mine produces clay which is required later ' +
+			'for bricks and pottery.',
 		levels: 5,
 		position: {
 			x: 2900,
@@ -650,7 +679,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Copper Mine',
 		handle: 'coppermine',
-		description: 'The copper mine extracts copper ore, that can be smelted later into copper bars.',
+		description: 'The copper mine extracts copper ore, that can be ' +
+			'smelted later into copper bars.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -675,7 +705,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Flour Mill',
 		handle: 'mill',
-		description: 'The Flour Mill produces flour from the wheat cultivated by your Grain Farm.',
+		description: 'The Flour Mill produces flour from the wheat ' +
+			'cultivated by your Grain Farm.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -699,7 +730,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Bakery',
 		handle: 'bakery',
-		description: 'The Bakery creates bread from flour, therefore providing your settlers with basic food.',
+		description: 'The Bakery creates bread from flour, therefore providing ' +
+			'your settlers with basic food.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -723,7 +755,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Pottery Workshop',
 		handle: 'pottery',
-		description: 'The Pottery Workshop uses a high-temperature kiln and clay to create pottery for the inhabitants of your settlement.',
+		description: 'The Pottery Workshop uses a high-temperature kiln and clay ' +
+			'to create pottery for the inhabitants of your settlement.',
 		levels: 3,
 		position: {
 			x: 1740,
@@ -747,7 +780,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Gunpowder Mill',
 		handle: 'gunpowdermill',
-		description: 'A Gunpowder Mill is creating highly useful (and unstable) gunpowder from the sulphur found in your Charcoal Burner`s Hut.',
+		description: 'A Gunpowder Mill is creating highly useful (and unstable) ' +
+			'gunpowder from the sulphur found in your Charcoal Burner`s Hut.',
 		levels: 3,
 		position: {
 			x: 500,
@@ -773,7 +807,10 @@ game.BUILDINGS = [
 	}, {
 		name: 'Armory',
 		handle: 'armory',
-		description: 'The Armory is a major building that produces weapons and armor for your soldiers. If you want to conquer other settlements, you will need to build one and keep it stocked with materials.',
+		description: 'The Armory is a major building that produces weapons ' +
+			'and armor for your soldiers. If you want to conquer other ' +
+			'settlements, you will need to build one and keep it stocked ' +
+			'with materials.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -802,7 +839,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Butcher',
 		handle: 'butcher',
-		description: 'The Butcher slaughters cattle, pigs or goats for meat, providing meat, a food type that is more nutritious. Hides will be processed further at the Tannery.',
+		description: 'The Butcher slaughters cattle, pigs or goats for meat, ' +
+			'providing meat, a food type that is more nutritious. Hides will be ' +
+			'processed further at the Tannery.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -834,7 +873,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Iron smelter',
 		handle: 'ironsmelter',
-		description: 'The Iron Smelter (or foundry) smelts iron ore into iron bars using coal.',
+		description: 'The Iron Smelter (or foundry) smelts iron ore into iron ' +
+			'bars using coal.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -862,7 +902,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Copper smelter',
 		handle: 'coppersmelter',
-		description: 'The Copper Smelter smelts copper ore into copper bars using coal.',
+		description: 'The Copper Smelter smelts copper ore into copper ' +
+			'bars using coal.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -913,7 +954,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Trapper`s Lodge',
 		handle: 'trapper',
-		description: 'The trapper captures wild animals and slaughters them, gathering their furs and some meat.',
+		description: 'The trapper captures wild animals and slaughters them, ' +
+			'gathering their furs and some meat.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -935,7 +977,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Furrier`s Workshop',
 		handle: 'furrier',
-		description: 'The furrier uses furs from the Trapper`s Lodge mixed with salt and processes them into fur coats that will help your settlers during the cold winters.',
+		description: 'The furrier uses furs from the Trapper`s Lodge mixed with ' +
+			'salt and processes them into fur coats that will help your settlers ' +
+			'during the cold winters.',
 		levels: 3,
 		position: {
 			x: 2510,
@@ -959,7 +1003,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Clothing Factory',
 		handle: 'clothingfactory',
-		description: 'The Clothing Factory produces clothes for your settlement. You don`t want naked citizens, do you?',
+		description: 'The Clothing Factory produces clothes for your settlement. ' +
+			'You don`t want naked citizens, do you?',
 		levels: 3,
 		position: {
 			x: 1580,
@@ -983,7 +1028,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Weaver`s Hut',
 		handle: 'weaver',
-		description: 'The weaver uses a hefty amount of cotton to produce cotton fabric for your settlers` clothes.',
+		description: 'The weaver uses a hefty amount of cotton to produce ' +
+			'cotton fabric for your settlers` clothes.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -1032,7 +1078,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Coffee roaster',
 		handle: 'coffeeroaster',
-		description: 'The Coffee Roaster uses the coffee beans from your Coffee Farm and processes them into coffee.',
+		description: 'The Coffee Roaster uses the coffee beans from your Coffee ' +
+			'Farm and processes them into coffee.',
 		levels: 3,
 		position: {
 			x: 2150,
@@ -1060,7 +1107,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Sugar Mill',
 		handle: 'sugarmill',
-		description: 'The Sugar Mill processes any sugar cane you have in storage into sugar.',
+		description: 'The Sugar Mill processes any sugar cane you have in ' +
+			'storage into sugar.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -1089,7 +1137,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Winery',
 		handle: 'winery',
-		description: 'The Winery uses the grapes from your Grapes Farm and processes them into wine. It uses either barrels or bottles, depending on what you have in storage.',
+		description: 'The Winery uses the grapes from your Grapes Farm and ' +
+			'processes them into wine. It uses either barrels or bottles, ' +
+			'depending on what you have in storage.',
 		levels: 5,
 		position: {
 			x: 2520,
@@ -1122,7 +1172,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Optician`s Shop',
 		handle: 'opticiansworkshop',
-		description: 'The optician uses copper and glass to create glasses for your settlers.',
+		description: 'The optician uses copper and glass to create glasses ' +
+			'for your settlers.',
 		levels: 3,
 		position: {
 			x: 1280,
@@ -1148,7 +1199,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Paper Mill',
 		handle: 'papermill',
-		description: 'The Paper Mill uses wood to produce paper, which is used together with indigo to produce books at the Printing House.',
+		description: 'The Paper Mill uses wood to produce paper, which is used ' +
+			'together with indigo to produce books at the Printing House.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -1343,7 +1395,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Marzipan Workshop',
 		handle: 'marzipanworkshop',
-		description: 'The Marzipan Workshop uses milk, almonds and sugar from city storage to create delicious marzipan. Your settlers will definitely appreciate it.',
+		description: 'The Marzipan Workshop uses milk, almonds and sugar from ' +
+			'city storage to create delicious marzipan. Your settlers will ' +
+			'definitely appreciate it.',
 		levels: 3,
 		position: {
 			x: 1090,
@@ -1373,7 +1427,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Silk Weaver',
 		handle: 'silkweaver',
-		description: 'The Silk Weaver requires cotton, gold and silk and produces brocade robes.',
+		description: 'The Silk Weaver requires cotton, gold and silk and produces ' +
+			'brocade robes.',
 		levels: 3,
 		position: {
 			x: 1220,
@@ -1501,7 +1556,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Brewery',
 		handle: 'brewery',
-		description: 'The Brewery brews beer from wheat. Beer is needed for higher-level houses or your city`s navy.',
+		description: 'The Brewery brews beer from wheat. Beer is needed for ' +
+			'higher-level houses or your city`s navy.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -1620,7 +1676,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Charcoal Burner`s Hut',
 		handle: 'charcoalburnerhut',
-		description: 'The Charcoal Burner`s Hut burns wood into coal and sulphur, which is needed by all your smelters.',
+		description: 'The Charcoal Burner`s Hut burns wood into coal and sulphur, ' +
+			'which is needed by all your smelters.',
 		levels: 3,
 		position: {
 			x: 1370,
@@ -1996,7 +2053,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Almonds farm',
 		handle: 'almondsfarm',
-		description: 'The Almonds Farm cultivates almonds for marzipan manufacture or export.',
+		description: 'The Almonds Farm cultivates almonds for marzipan manufacture ' +
+			'or export.',
 		production: {
 			almonds: 1
 		},
@@ -2043,7 +2101,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Cattle Farm',
 		handle: 'cattlefarm',
-		description: 'A Cattle Farm grows cattle so your settlers can eat food that is more nutritious than bread. Also produces milk and has a low chance for producing cheese.',
+		description: 'A Cattle Farm grows cattle so your settlers can eat food that ' +
+			'is more nutritious than bread. Also produces milk and has a low chance ' +
+			'for producing cheese.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -2087,7 +2147,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Pig Farm',
 		handle: 'pigfarm',
-		description: 'A Pig Farm grows pigs so your settlers can eat food that is more nutritious than bread.',
+		description: 'A Pig Farm grows pigs so your settlers can eat food that ' +
+			'is more nutritious than bread.',
 		visible_upgrades: true,
 		production: {
 			pig: 1
@@ -2127,7 +2188,9 @@ game.BUILDINGS = [
 	}, {
 		name: 'Goat Farm',
 		handle: 'goatfarm',
-		description: 'A Goat Farm grows cattle so your settlers can eat food that is more nutritious than bread. Also produces milk and has a low chance for producing cheese.',
+		description: 'A Goat Farm grows cattle so your settlers can eat food ' +
+			'that is more nutritious than bread. Also produces milk and has a ' +
+			'low chance for producing cheese.',
 		visible_upgrades: true,
 		production: {
 			goat: 1,
@@ -2171,7 +2234,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Grain farm',
 		handle: 'grainfarm',
-		description: 'A Grain Farm cultivates wheat that will be later transformed into bread, and your settlers will live happily ever after.',
+		description: 'A Grain Farm cultivates wheat that will be later transformed ' +
+			'into bread, and your settlers will live happily ever after.',
 		visible_upgrades: true,
 		production: {
 			wheat: 2
@@ -2256,7 +2320,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Coffee farm',
 		handle: 'coffeefarm',
-		description: 'A Coffee Farm cultivates coffee beans in your city, ready to be processed into coffee.',
+		description: 'A Coffee Farm cultivates coffee beans in your city, ready ' +
+			'to be processed into coffee.',
 		levels: 3,
 		position: {
 			x: 1840,
@@ -2441,7 +2506,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Indigo farm',
 		handle: 'indigofarm',
-		description: 'The Indigo Farm produces indigo that can be turned to ink and used to create books.',
+		description: 'The Indigo Farm produces indigo that can be turned to ink ' +
+			'and used to create books.',
 		levels: 5,
 		visible_upgrades: true,
 		position: {
@@ -2518,7 +2584,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Tobacco field',
 		handle: 'tobaccofield',
-		description: 'The Tobacco Field produces tobacco that will be further processed by the Tobacco Farm',
+		description: 'The Tobacco Field produces tobacco that will be further ' +
+			'processed by the Tobacco Farm',
 		position: {
 			x: 1870,
 			y: 1460
@@ -2638,7 +2705,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Toolmaker Workshop',
 		handle: 'toolmaker',
-		description: 'Tools are needed to construct higher-level buildings, and a Toolmaker Workshop will create those for your settlement.',
+		description: 'Tools are needed to construct higher-level buildings, and a ' +
+			'Toolmaker Workshop will create those for your settlement.',
 		visible_upgrades: true,
 		levels: 5,
 		position: {
@@ -2691,7 +2759,8 @@ game.BUILDINGS = [
 	}, {
 		name: 'Brickworks',
 		handle: 'brickworks',
-		description: 'The Brickworks uses coal and clay to manufacture bricks, needed for higher-level buildings in your settlement.',
+		description: 'The Brickworks uses coal and clay to manufacture bricks, ' +
+			'needed for higher-level buildings in your settlement.',
 		levels: 5,
 		position: {
 			x: 620,

@@ -100,14 +100,22 @@ class ui {
 						'<section class="game"></section>' +
 					'</div>' +
 					'<footer>' +
-						'<a href="#" data-action="panel" data-panel="buildings" class="tips" title="Buildings"></a>' +
-						'<a href="#" data-action="panel" data-panel="storage" class="tips" title="Storage Space"></a>' +
-						'<a href="#" data-action="panel" data-panel="trades" class="tips" title="Trades"></a>' +
-						'<a href="#" data-action="panel" data-panel="council" class="tips" title="City Council"></a>' +
-						'<a href="#" data-action="panel" data-panel="ranks" class="tips" title="Ranks"></a>' +
-						'<a href="#" data-action="panel" data-panel="world" class="tips" title="World Map"></a>' +
-						'<a href="#" data-action="panel" data-panel="debug" class="tips" title="Debug"></a>' +
-						'<a href="#" data-action="panel" data-panel="help" class="tips" title="Help"></a>' +
+						'<a href="#" data-action="panel" data-panel="buildings" ' +
+						'class="tips" title="Buildings"></a>' +
+						'<a href="#" data-action="panel" data-panel="storage" ' +
+						'class="tips" title="Storage Space"></a>' +
+						'<a href="#" data-action="panel" data-panel="trades" ' +
+						'class="tips" title="Trades"></a>' +
+						'<a href="#" data-action="panel" data-panel="council" ' +
+						'class="tips" title="City Council"></a>' +
+						'<a href="#" data-action="panel" data-panel="ranks" ' +
+						'class="tips" title="Ranks"></a>' +
+						'<a href="#" data-action="panel" data-panel="world" ' +
+						'class="tips" title="World Map"></a>' +
+						'<a href="#" data-action="panel" data-panel="debug" ' +
+						'class="tips" title="Debug"></a>' +
+						'<a href="#" data-action="panel" data-panel="help" ' +
+						'class="tips" title="Help"></a>' +
 					'</footer>' +
 				'</section>' +
 				'<audio id="music" loop>' +
@@ -122,12 +130,14 @@ class ui {
 				if (game.is_virtual_resource(item)) {
 					__t += '<div class="resource ' + item + '">' +
 						'<span class="amount">0</span>' +
-						'<img title="' + game.RESOURCES[item].name + '" class="tips small" src="' + game.ASSETS_URL + 'images/assets/resources/' + item + '.png" />' +
+						'<img title="' + game.RESOURCES[item].name + '" class="tips small" src="' +
+						game.ASSETS_URL + 'images/assets/resources/' + item + '.png" />' +
 					'</div>';
 				} else {
 					_t += '<div class="resource ' + item + '">' +
 						'<span class="amount">0</span>' +
-						'<img title="' + game.RESOURCES[item].name + '" class="tips small" src="' + game.ASSETS_URL + 'images/assets/resources/' + item + '.png" />' +
+						'<img title="' + game.RESOURCES[item].name + '" class="tips small" src="' +
+						game.ASSETS_URL + 'images/assets/resources/' + item + '.png" />' +
 					'</div>';
 				}
 			}
@@ -166,13 +176,15 @@ class ui {
 	 * @returns {String}
 	 */
 	item_tooltip (item) {
-		let out = '<h4 style="color: ' + game.ITEM_QUALITY_COLORS[item.quality] + '">' + item.name + '</h4>';
+		let out = '<h4 style="color: ' + game.ITEM_QUALITY_COLORS[item.quality] + '">' +
+			item.name + '</h4>';
 		if (item.flavour) {
 			out += '<span class="flavour">"' + item.flavour + '"</span>' + ' <br />';
 		}
 		out += 'Slot: ' + game.ITEM_SLOTS_LIST[item.slot] + ' <br />';
 		if (item.type === game.ITEM_TYPE_WEAPON) {
-			out += 'Damage: <span class="red">' + item.stats.damageMin + '-' + item.stats.damageMax + '</span><br />Speed: ' + item.stats.speed + '<br />';
+			out += 'Damage: <span class="red">' + item.stats.damageMin + '-' +
+				item.stats.damageMax + '</span><br />Speed: ' + item.stats.speed + '<br />';
 		} else {
 			out += 'Armor: ' + item.stats.armor + '<br />';
 		}
@@ -191,7 +203,8 @@ class ui {
 		if (item.stats.spirit) {
 			out += 'Spirit: <span class="green">+' + item.stats.spirit + '</span><br />';
 		}
-		out += 'Type: <span style="color: ' + game.ITEM_QUALITY_COLORS[item.quality] + '">' + game.ITEM_QUALITY_LIST[item.quality] + '</span>';
+		out += 'Type: <span style="color: ' + game.ITEM_QUALITY_COLORS[item.quality] +
+			'">' + game.ITEM_QUALITY_LIST[item.quality] + '</span>';
 		return out;
 	}
 
@@ -204,12 +217,16 @@ class ui {
 	static window_about_section () {
 		let out = '<a href="#" class="do-about button button-blue">About</a>' +
 			'<div class="about-game">' +
-				'<a class="github" target="_blank" href="https://github.com/sizeofcat/civitas"></a>' +
-				'<p>Civitas is written by <a target="_blank" href="https://sizeof.cat">sizeof(cat)</a>.</p>' +
+				'<a class="github" target="_blank" ' +
+				'href="https://github.com/sizeofcat/civitas"></a>' +
+				'<p>Civitas is written by <a target="_blank" ' +
+				'href="https://sizeof.cat">sizeof(cat)</a>.</p>' +
 				'<p>Big thanks to:</p>' +
 				'<ul>' +
-					'<li><a target="_blank" href="https://soundcloud.com/shantifax">Shantifax</a> for the music (Glandula Pinealis).</li>' +
-					'<li><a target="_blank" href="http://bluebyte.com">Blue Byte</a> for Anno 1404.</li>' +
+					'<li><a target="_blank" href="https://soundcloud.com/shantifax">' +
+					'Shantifax</a> for the music (Glandula Pinealis).</li>' +
+					'<li><a target="_blank" href="http://bluebyte.com">Blue Byte</a>' +
+					' for Anno 1404.</li>' +
 				'</ul>' +
 			'</div>';
 		return out;
@@ -275,10 +292,13 @@ class ui {
 					'</header>' +
 					'<section></section>' +
 					'<footer>' +
-						'<a class="tips red-link demolish" title="Demolish this building" href="#"><span></span></a>' +
+						'<a class="tips red-link demolish" title="Demolish this building" ' +
+						'href="#"><span></span></a>' +
 						'<a class="tips blue-link pause start" href="#"><span></span></a>' +
-						'<a class="tips green-link upgrade" title="Upgrade building" href="#"><span></span></a>' +
-						'<a class="tips red-link downgrade" title="Downgrade building" href="#"><span></span></a>' +
+						'<a class="tips green-link upgrade" title="Upgrade building" ' +
+						'href="#"><span></span></a>' +
+						'<a class="tips red-link downgrade" title="Downgrade building" ' +
+						'href="#"><span></span></a>' +
 					'</footer>' +
 				'</div>';
 		return out;
@@ -300,9 +320,12 @@ class ui {
 		if (params.handle.slice(0, 5) === 'house') {
 			building_image = params.handle.slice(0, 5);
 		}
-		let image = (typeof params.visible_upgrades === 'undefined' || params.visible_upgrades === false) ? building_image: building_image + params.level;
+		let image = (typeof params.visible_upgrades === 'undefined' ||
+			params.visible_upgrades === false) ? building_image: building_image +
+			params.level;
 		let out = '<div class="column preview-image">' +
-					'<img class="image" src="' + game.ASSETS_URL + 'images/assets/buildings/' + image + '.png" />' +
+					'<img class="image" src="' + game.ASSETS_URL +
+					'images/assets/buildings/' + image + '.png" />' +
 				'</div>' +
 				'<div class="column">' +
 					'<p>' + params.description + '</p>' +
@@ -348,7 +371,9 @@ class ui {
 	level_panel (level, new_level, max_level) {
 		let out = '<dt>Level</dt>' +
 				'<dd>' +
-					'<span title="Current building level" class="tips">' + new_level + '</span> / <span title="Maximum building level achievable through upgrades" class="tips">' + max_level + '</span>' +
+					'<span title="Current building level" class="tips">' + new_level +
+					'</span> / <span title="Maximum building level achievable ' +
+					'through upgrades" class="tips">' + max_level + '</span>' +
 				'</dd>';
 		return out;
 	}
@@ -367,7 +392,10 @@ class ui {
 		if (typeof costs !== 'undefined') {
 			out += '<dt>Cost</dt>';
 			for (let item in costs) {
-				out += '<dd>' + game.nice_numbers(costs[item]) + this.resource_small_img(item) + (typeof levels !== 'undefined' && level < levels ? ' / ' + game.nice_numbers(costs[item] * (level + 1)) + this.resource_small_img(item) : '') + '</dd>';
+				out += '<dd>' + game.nice_numbers(costs[item]) +
+					this.resource_small_img(item) + (typeof levels !== 'undefined' &&
+					level < levels ? ' / ' + game.nice_numbers(costs[item] *
+					(level + 1)) + this.resource_small_img(item) : '') + '</dd>';
 			}
 		}
 		return out;
@@ -415,7 +443,9 @@ class ui {
 	 * @returns {String}
 	 */
 	navy_img (name) {
-		return '<img class="tips small" title="' + game.SHIPS[name].name + '" src="' + game.ASSETS_URL + 'images/assets/navy/' + name.toLowerCase().replace(/ /g,"_") + '.png" />';
+		return '<img class="tips small" title="' + game.SHIPS[name].name +
+			'" src="' + game.ASSETS_URL + 'images/assets/navy/' +
+			name.toLowerCase().replace(/ /g,"_") + '.png" />';
 	}
 
 	/**
@@ -426,7 +456,9 @@ class ui {
 	 * @returns {String}
 	 */
 	army_img (name) {
-		return '<img class="tips small" title="' + game.SOLDIERS[name].name + '" src="' + game.ASSETS_URL + 'images/assets/army/' + name.toLowerCase().replace(/ /g,"_") + '.png" />';
+		return '<img class="tips small" title="' + game.SOLDIERS[name].name +
+			'" src="' + game.ASSETS_URL + 'images/assets/army/' +
+			name.toLowerCase().replace(/ /g,"_") + '.png" />';
 	}
 
 	/**
@@ -457,11 +489,13 @@ class ui {
 	 */
 	army_list (army, no_margin) {
 		let out2 = '<p>There are no soldiers in this army.</p>';
-		let out = '<dl' + ((typeof no_margin !== 'undefined' && no_margin === true) ? ' class="nomg"' : '') + '>';
+		let out = '<dl' + ((typeof no_margin !== 'undefined' &&
+			no_margin === true) ? ' class="nomg"' : '') + '>';
 		let total = 0;
 		for (let soldier in army) {
 			if (army[soldier] > 0) {
-				out += '<dt>' + army[soldier] + '</dt>' + '<dd>' + this.army_img(soldier) + '</dd>';
+				out += '<dt>' + army[soldier] + '</dt>' + '<dd>' +
+					this.army_img(soldier) + '</dd>';
 				total += army[soldier];
 			}
 		}
@@ -491,7 +525,11 @@ class ui {
 		let total_defense = 0;
 		for (let ship in navy) {
 			if (navy[ship] > 0) {
-				out += '<span class="tips storage-item small" title="' + game.SHIPS[ship].name + '"><img class="small" src="' + game.ASSETS_URL + 'images/assets/navy/' + ship.toLowerCase().replace(/ /g,"_") + '.png" /><span class="amount">' + navy[ship] + '</span></span>';
+				out += '<span class="tips storage-item small" title="' +
+					game.SHIPS[ship].name + '"><img class="small" src="' +
+					game.ASSETS_URL + 'images/assets/navy/' +
+					ship.toLowerCase().replace(/ /g,"_") + '.png" />' +
+					'<span class="amount">' + navy[ship] + '</span></span>';
 				total += navy[ship];
 				total_attack += (game.SHIPS[ship].attack * navy[ship]);
 				total_defense += (game.SHIPS[ship].defense * navy[ship]);
@@ -523,7 +561,11 @@ class ui {
 		let total = 0;
 		for (let soldier in army) {
 			if (army[soldier] > 0) {
-				out += '<span class="tips storage-item small" title="' + game.SOLDIERS[soldier].name + '"><img class="small" src="' + game.ASSETS_URL + 'images/assets/army/' + soldier.toLowerCase().replace(/ /g,"_") + '.png" /><span class="amount">' + army[soldier] + '</span></span>';
+				out += '<span class="tips storage-item small" title="' +
+					game.SOLDIERS[soldier].name + '"><img class="small" src="' +
+					game.ASSETS_URL + 'images/assets/army/' +
+					soldier.toLowerCase().replace(/ /g,"_") + '.png" />' +
+					'<span class="amount">' + army[soldier] + '</span></span>';
 				total += army[soldier];
 				total_attack += (game.SOLDIERS[soldier].attack * army[soldier]);
 				total_defense += (game.SOLDIERS[soldier].defense * army[soldier]);
@@ -577,7 +619,9 @@ class ui {
 	 * @returns {String}
 	 */
 	panel_btn (text, title, handle, class_name, disabled) {
-		return '<a title="' + title + '" data-handle="' + handle + '" class="tips ' + class_name + (disabled === true ? ' disabled' : '') + '" href="#">' + text + '</a></td>';
+		return '<a title="' + title + '" data-handle="' + handle +
+			'" class="tips ' + class_name + (disabled === true ? ' disabled' : '') +
+			'" href="#">' + text + '</a></td>';
 	}
 
 	/**
@@ -612,11 +656,13 @@ class ui {
 	 */
 	navy_list (army, no_margin) {
 		let out2 = '<p>There are no ships in this navy.</p>';
-		let out = '<dl' + ((typeof no_margin !== 'undefined' && no_margin === true) ? ' class="nomg"' : '') + '>';
+		let out = '<dl' + ((typeof no_margin !== 'undefined' &&
+			no_margin === true) ? ' class="nomg"' : '') + '>';
 		let total = 0;
 		for (let ship in army) {
 			if (army[ship] > 0) {
-				out += '<dt>' + army[ship] + '</dt>' + '<dd>' + this.navy_img(ship) + '</dd>';
+				out += '<dt>' + army[ship] + '</dt>' + '<dd>' +
+					this.navy_img(ship) + '</dd>';
 				total += army[ship];
 			}
 		}
@@ -642,8 +688,17 @@ class ui {
 		if (params.type.slice(0, 5) === 'house') {
 			building_image = params.type.slice(0, 5);
 		}
-		let image = (typeof params.data.visible_upgrades === 'undefined' || params.data.visible_upgrades === false) ? building_image : building_image + params.data.level;
-		return '<div data-type="' + params.type + '" data-level="' + params.data.level + '" ' + 'style="background-image:url(' + game.ASSETS_URL + 'images/assets/buildings/' + image + '.png);left:' + params.data.position.x + 'px;top:' + params.data.position.y + 'px" title=\'' + params.data.name + '\' ' + 'id="building-' + params.data.handle + '"' + 'class="tips building' + (params.data.large === true ? ' large' : '') + '"></div>';
+		let image = (typeof params.data.visible_upgrades === 'undefined' ||
+			params.data.visible_upgrades === false) ? building_image :
+			building_image + params.data.level;
+		return '<div data-type="' + params.type + '" data-level="' +
+			params.data.level + '" ' + 'style="background-image:url(' +
+			game.ASSETS_URL + 'images/assets/buildings/' + image +
+			'.png);left:' + params.data.position.x + 'px;top:' +
+			params.data.position.y + 'px" title=\'' + params.data.name +
+			'\' ' + 'id="building-' + params.data.handle + '"' +
+			'class="tips building' + (params.data.large === true ? ' large' : '') +
+			'"></div>';
 	}
 
 	/**
@@ -655,7 +710,10 @@ class ui {
 	 * @returns {String}
 	 */
 	resource_storage_small_el (resource, amount) {
-		return '<span class="tips storage-item small" title="' + game.get_resource_name(resource) + '"><img class="small" src="' + game.ASSETS_URL + 'images/assets/resources/' + resource + '.png" /><span class="amount">' + amount + '</span></span>';
+		return '<span class="tips storage-item small" title="' +
+			game.get_resource_name(resource) + '"><img class="small" src="' +
+			game.ASSETS_URL + 'images/assets/resources/' + resource +
+			'.png" /><span class="amount">' + amount + '</span></span>';
 	}
 
 	/**
@@ -667,7 +725,10 @@ class ui {
 	 * @returns {String}
 	 */
 	resource_storage_el (resource, amount) {
-		return '<div class="storage-item" data-resource="' + resource + '"><span class="title">' + game.get_resource_name(resource) + '</span><img src="' + game.ASSETS_URL + 'images/assets/resources/' + resource + '.png" /><span class="amount">' + amount + '</span></div>';
+		return '<div class="storage-item" data-resource="' + resource +
+			'"><span class="title">' + game.get_resource_name(resource) +
+			'</span><img src="' + game.ASSETS_URL + 'images/assets/resources/' +
+			resource + '.png" /><span class="amount">' + amount + '</span></div>';
 	}
 
 	/**
@@ -681,7 +742,8 @@ class ui {
 		let out = '<div class="tabs">' +
 				'<ul>';
 		for (let i = 0; i < data.length; i++) {
-			out += '<li><a href="#tab-' + data[i].toLowerCase().replace(/ /g, "-") + '">' + data[i].capitalize() + '</a></li>';
+			out += '<li><a href="#tab-' + data[i].toLowerCase().replace(/ /g, "-") +
+				'">' + data[i].capitalize() + '</a></li>';
 		}
 		out += '</ul>';
 		for (let i = 0; i < data.length; i++) {
@@ -730,7 +792,8 @@ class ui {
 		if (typeof materials !== 'undefined') {
 			out += '<dt>Extra materials</dt>';
 			for (let item in materials) {
-				out += '<dd>' + (level * materials[item]).toFixed(4) * 100 + '%' + this.resource_small_img(item) + '</dd>';
+				out += '<dd>' + (level * materials[item]).toFixed(4) * 100 +
+					'%' + this.resource_small_img(item) + '</dd>';
 			}
 		}
 		return out;
@@ -749,7 +812,8 @@ class ui {
 		if (typeof materials !== 'undefined') {
 			out += '<dt>Produces</dt>';
 			for (let item in materials) {
-				out += '<dd>' + (level * materials[item]) + this.resource_small_img(item) + '</dd>';
+				out += '<dd>' + (level * materials[item]) +
+					this.resource_small_img(item) + '</dd>';
 			}
 		}
 		return out;
@@ -764,7 +828,8 @@ class ui {
 	 */
 	requires_panel (requires) {
 		let out = '';
-		if (typeof requires.buildings !== 'undefined' || typeof requires.settlement_level !== 'undefined') {
+		if (typeof requires.buildings !== 'undefined' ||
+			typeof requires.settlement_level !== 'undefined') {
 			out += '<dt>Requires</dt>';
 			out += '<dd>';
 			if (typeof requires.buildings !== 'undefined') {
@@ -815,7 +880,9 @@ class ui {
 		if (typeof storage !== 'undefined') {
 			out += '<dt>Storage</dt>' +
 				'<dd>' +
-					(level * storage) + '<img alt="Storage space" class="tips small" title="Storage Space" src="' + game.ASSETS_URL + 'images/assets/resources/storage.png" />' +
+					(level * storage) + '<img alt="Storage space" ' +
+					'class="tips small" title="Storage Space" src="' +
+					game.ASSETS_URL + 'images/assets/resources/storage.png" />' +
 				'</dd>';
 		}
 		return out;
@@ -829,7 +896,10 @@ class ui {
 	 * @returns {String}
 	 */
 	resource_small_img (resource) {
-		return '<img alt="' + game.get_resource_name(resource) + '" class="tips small" title="' + game.get_resource_name(resource) + '" src="' + game.ASSETS_URL + 'images/assets/resources/' + resource + '.png" />';
+		return '<img alt="' + game.get_resource_name(resource) +
+			'" class="tips small" title="' + game.get_resource_name(resource) +
+			'" src="' + game.ASSETS_URL + 'images/assets/resources/' +
+			resource + '.png" />';
 	}
 
 	/**
@@ -924,7 +994,8 @@ class ui {
 			notty_type = 'war';
 		}
 		notty.addClass(notty_type);
-		settings.img = game.ASSETS_URL + 'images/assets/ui/icon_' + notty_type + '.png';
+		settings.img = game.ASSETS_URL + 'images/assets/ui/icon_' +
+			notty_type + '.png';
 		image = $('<div>', {
 			style: "background: url('" + settings.img + "')"
 		});
@@ -1031,7 +1102,12 @@ class ui {
 		if ($('#panel-debug .console p').length > game.MAX_CONSOLE_LINES) {
 			$('#panel-debug .console').empty();
 		}
-		$('#panel-debug .console').prepend('<p><span class="date">' + game.get_now() + '</span><span class="namespace game-' + namespace + '">' + namespace.toUpperCase() + '</span>' + (error === true ? '<span class="error">ERROR</span>' : '') + '<span' + (error === true ? ' class="error-message"' : ' class="log-message"') + '>' + message + '</span></p>');
+		$('#panel-debug .console').prepend('<p><span class="date">' +
+			game.get_now() + '</span><span class="namespace game-' +
+			namespace + '">' + namespace.toUpperCase() + '</span>' +
+			(error === true ? '<span class="error">ERROR</span>' : '') +
+			'<span' + (error === true ? ' class="error-message"' :
+			' class="log-message"') + '>' + message + '</span></p>');
 		return this;
 	}
 
@@ -1123,9 +1199,13 @@ class ui {
 	check_storage () {
 		const storage = this.core().get_settlement().storage();
 		if (storage.occupied >= storage.all) {
-			this.error('You ran out of storage space and all goods produced will be lost. Upgrade your warehouse or marketplace.', 'No storage space');
+			this.error('You ran out of storage space and all goods produced ' +
+				'will be lost. Upgrade your warehouse or marketplace.',
+				'No storage space');
 		} else if ((storage.all - storage.occupied) < 100) {
-			this.error('You will soon run out of storage space and all goods produced will be lost. Upgrade your warehouse or marketplace.', 'Storage nearly full');
+			this.error('You will soon run out of storage space and all goods ' +
+				'produced will be lost. Upgrade your warehouse or marketplace.',
+				'Storage nearly full');
 		}
 		return storage;
 	}

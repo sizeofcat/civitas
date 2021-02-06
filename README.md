@@ -1,5 +1,4 @@
-Civitas
-=======
+# Civitas
 
 ![Main game area](docs/images/civitas-screenshot-2.jpg)
 

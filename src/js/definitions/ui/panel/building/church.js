@@ -36,7 +36,8 @@ class ui_panel_church extends ui_panel {
 							settlement.change_religion(id);
 						}
 					},
-					'Are you sure you want to switch religions? You will lose all your city`s faith!'
+					'Are you sure you want to switch religions? You will ' +
+					'lose all your city`s faith!'
 				);
 				return false;
 			});
@@ -47,16 +48,26 @@ class ui_panel_church extends ui_panel {
 			let building = core.get_settlement().get_building(this.params_data.handle);
 			let _t = '';
 			if (building) {
-				$(this.handle + ' #tab-info').empty().append(core.ui().building_panel(this.params_data, building.level));
+				$(this.handle + ' #tab-info').empty()
+					.append(core.ui().building_panel(this.params_data, building.level));
 				_t = '<h2>Faith</h2>' + 
 					'<div class="section">' + 
-						core.ui().progress((settlement.faith() * 100) / game.MAX_FAITH_VALUE, 'large', settlement.faith() + ' / ' + game.MAX_FAITH_VALUE) +
+						core.ui().progress((settlement.faith() * 100) /
+						game.MAX_FAITH_VALUE, 'large', settlement.faith() +
+						' / ' + game.MAX_FAITH_VALUE) +
 					'</div>';
 				$(this.handle + ' #tab-faith').empty().append(_t);
-				_t = '<p>Changing your settlement`s religion requires <strong>' + game.MAX_FAITH_VALUE + '</strong> faith, each religion gives you access to different heroes in your Tavern and gives you a boost to the influence with the cities sharing the same religion.</p>' +
+				_t = '<p>Changing your settlement`s religion requires <strong>' +
+					game.MAX_FAITH_VALUE + '</strong> faith, each religion gives ' +
+					'you access to different heroes in your Tavern and gives ' +
+					'you a boost to the influence with the cities sharing the ' +
+					'same religion.</p>' +
 					'<div class="religion-list">';
 				for (let i = 0; i < game.RELIGIONS.length; i++) {
-					_t += '<div data-handle="' + game.RELIGIONS[i] + '" data-id="' + i + '" class="religion' + (settlement.religion().id === i ? ' selected' : '') + '"><span>' + game.RELIGIONS[i].capitalize() + '</span></div>';
+					_t += '<div data-handle="' + game.RELIGIONS[i] + '" data-id="' +
+						i + '" class="religion' + (settlement.religion().id === i ?
+						' selected' : '') + '"><span>' +
+						game.RELIGIONS[i].capitalize() + '</span></div>';
 				}
 				_t += '</div>';
 				$(this.handle + ' #tab-religion').empty().append(_t);

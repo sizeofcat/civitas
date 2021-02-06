@@ -1,6 +1,5 @@
 # Coding Style
 
-
 All the code in this repository is subject to the following style guide. Anything outside of this is not required to follow but it is recommended for new code to follow it. The most important thing is to have code consistency formatted within a particular project, subsystem or module.
 
 ## Indents and Control Statements

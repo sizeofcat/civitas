@@ -28,26 +28,38 @@ class settlement {
 		this._ruins = {};
 		this._heroes = [];
 		this._properties.id = params.properties.id;
-		this._properties.name = (typeof params.properties.name !== 'undefined') ? params.properties.name: game.get_random_unique(game.SETTLEMENT_NAMES);
-		this._properties.player = (typeof params.properties.player !== 'undefined') ? params.properties.player : false;
-		this._properties.level = (typeof params.properties.level !== 'undefined') ? params.properties.level : 1;
-		this._properties.religion = (typeof params.properties.religion !== 'undefined') ? params.properties.religion : game.RELIGION_NONE;
-		this._properties.nationality = (typeof params.properties.nationality !== 'undefined') ? params.properties.nationality : this.core().get_random_nationality();
-		this._properties.type = (typeof params.properties.type !== 'undefined') ? params.properties.type : game.CITY;
-		this._properties.ruler = (typeof params.properties.ruler !== 'undefined') ? params.properties.ruler : {
+		this._properties.name = (typeof params.properties.name !== 'undefined') ?
+			params.properties.name: game.get_random_unique(game.SETTLEMENT_NAMES);
+		this._properties.player = (typeof params.properties.player !== 'undefined') ?
+			params.properties.player : false;
+		this._properties.level = (typeof params.properties.level !== 'undefined') ?
+			params.properties.level : 1;
+		this._properties.religion = (typeof params.properties.religion !==
+			'undefined') ? params.properties.religion : game.RELIGION_NONE;
+		this._properties.nationality = (typeof params.properties.nationality !==
+			'undefined') ? params.properties.nationality : this.core().get_random_nationality();
+		this._properties.type = (typeof params.properties.type !== 'undefined') ?
+			params.properties.type : game.CITY;
+		this._properties.ruler = (typeof params.properties.ruler !== 'undefined') ?
+			params.properties.ruler : {
 				title: (this._properties.type === game.CAMP) ? 'Warlord' : 'Mayor',
 				avatar: game.get_random(1, game.AVATARS),
-				personality: (this._properties.type === game.CAMP) ? game.PERSONALITY_WARLORD : this.core().get_random_personality(),
+				personality: (this._properties.type === game.CAMP) ? game.PERSONALITY_WARLORD :
+					this.core().get_random_personality(),
 				name: game.get_random_unique(game.NAMES)
 			};
 		if (typeof params.ruins !== 'undefined') {
 			this._ruins.sid = (typeof params.ruins.sid !== 'undefined') ? params.ruins.sid : null;
-			this._ruins.scouted = (typeof params.ruins.scouted !== 'undefined') ? params.ruins.scouted : false;
-			this._ruins.resources = (typeof params.ruins.resources !== 'undefined') ? params.ruins.resources : {};
+			this._ruins.scouted = (typeof params.ruins.scouted !== 'undefined') ?
+				params.ruins.scouted : false;
+			this._ruins.resources = (typeof params.ruins.resources !== 'undefined') ?
+				params.ruins.resources : {};
 		}
 		this._properties.storage = 0;
-		this._properties.icon = (typeof params.properties.icon !== 'undefined') ? params.properties.icon : 1;
-		this._properties.waterside = (typeof params.properties.waterside !== 'undefined') ? params.properties.waterside : false;
+		this._properties.icon = (typeof params.properties.icon !== 'undefined') ?
+			params.properties.icon : 1;
+		this._properties.waterside = (typeof params.properties.waterside !== 'undefined') ?
+			params.properties.waterside : false;
 		this._army = this.load_army(params.army);
 		this._mercenary = (typeof params.mercenary !== 'undefined') ? params.mercenary : [];
 		this._status = (typeof params.status !== 'undefined') ? params.status : {};
@@ -55,7 +67,8 @@ class settlement {
 		this.resources = (typeof params.resources !== 'undefined') ? params.resources : {};
 		this._fill_resources();
 		this._location = params.location;
-		this._properties.color = (typeof params.properties.color !== 'undefined') ? params.properties.color : this.core().ui().get_random_color();
+		this._properties.color = (typeof params.properties.color !== 'undefined') ?
+			params.properties.color : this.core().ui().get_random_color();
 		this.core().world().add_settlement(this);
 		if (this.waterside() === true) {
 			this._navy = this.load_navy(params.navy);
@@ -84,7 +97,8 @@ class settlement {
 		} else {
 			this._properties.climate = params.properties.climate;
 		}
-		this._properties.population = (typeof params.properties.population !== 'undefined') ? params.properties.population : this.level() * game.POPULATION_PER_LEVEL;
+		this._properties.population = (typeof params.properties.population !== 'undefined') ?
+			params.properties.population : this.level() * game.POPULATION_PER_LEVEL;
 		return this;
 	}
 
@@ -276,7 +290,8 @@ class settlement {
 			prestige: this.prestige(),
 			espionage: this.espionage(),
 			score: Math.floor((
-				(this.fame() / half_level) + (this.prestige() / half_level) + (this.espionage() / half_level)
+				(this.fame() / half_level) + (this.prestige() / half_level) +
+				(this.espionage() / half_level)
 			) / half_level)
 		};
 		return rank;
@@ -485,14 +500,16 @@ class settlement {
 	}
 
 	/**
-	 * Check if the player settlement's nationality and the one passed as parameter nationality are the same.
+	 * Check if the player settlement's nationality and the one passed as parameter
+	 * nationality are the same.
 	 *
 	 * @param {String|settlement|Number} settlement
 	 * @returns {Boolean}
 	 * @public
 	 */
 	has_same_nationality (settlement) {
-		if (typeof settlement === 'object' && this.nationality().id === settlement.nationality().id) {
+		if (typeof settlement === 'object' && this.nationality().id ===
+			settlement.nationality().id) {
 			return true;
 		} else if (typeof settlement === 'number' || typeof settlement === 'string') {
 			const _settlement = this.core().get_settlement(settlement);
@@ -880,9 +897,12 @@ class settlement {
 				}
 				this._mercenary.push(army);
 				if (this.is_player()) {
-					this.core().ui().notify('The mercenaries of the ' + game.MERCENARIES[i].name + ' are now available for skirmish missions for the duration of one year.', 'Mercenaries recruited.');
+					this.core().ui().notify('The mercenaries of the ' +
+						game.MERCENARIES[i].name + ' are now available for skirmish missions ' +
+						'for the duration of one year.', 'Mercenaries recruited.');
 				}
-				this.core().ui().log('game', 'The city of ' + this.name() + ' hired the mercenaries of ' + game.MERCENARIES[i].name + '.');
+				this.core().ui().log('game', 'The city of ' + this.name() + ' hired the ' +
+					'mercenaries of ' + game.MERCENARIES[i].name + '.');
 				this.core().save_and_refresh();
 				return true;
 			}
@@ -1053,7 +1073,8 @@ class settlement {
 			const mercenary_army_data = game.MERCENARIES[id];
 			this._mercenary.splice(id, 1);
 			if (this.is_player()) {
-				this.core().ui().notify(mercenary_army_data.name + ' has been released from its duties.');
+				this.core().ui().notify(mercenary_army_data.name + ' has been ' +
+					'released from its duties.');
 			}
 			return true;
 		} else {
@@ -1180,21 +1201,27 @@ class settlement {
 	build (building_type) {
 		const building_data = this.get_building_data(building_type);
 		if (building_data) {
-			if ((typeof building_data.requires.settlement_level !== 'undefined') && (this._properties.level < building_data.requires.settlement_level)) {
+			if ((typeof building_data.requires.settlement_level !== 'undefined') &&
+				(this._properties.level < building_data.requires.settlement_level)) {
 				if (this.is_player()) {
 					this.core().ui().error('Your city level is too low to construct this building.');
 				}
 				return false;
 			}
-			if ((typeof building_data.requires.climate !== 'undefined') && ($.inArray(this.climate().id, building_data.requires.climate) === -1)) {
+			if ((typeof building_data.requires.climate !== 'undefined') &&
+				($.inArray(this.climate().id, building_data.requires.climate) === -1)) {
 				if (this.is_player()) {
-					this.core().ui().error('Your city lacks the required fertility and climate to construct this building.');
+					this.core().ui().error('Your city lacks the required fertility and ' +
+						'climate to construct this building.');
 				}
 				return false;
 			}
-			if ((typeof building_data.requires.research !== 'undefined') && (!this.core().has_research(building_data.requires.research))) {
+			if ((typeof building_data.requires.research !== 'undefined') &&
+				(!this.core().has_research(building_data.requires.research))) {
 				if (this.is_player()) {
-					this.core().ui().error('Your city is missing the `' + this.core().get_research_config_data(building_data.requires.research).name + '` research needed to construct this building.');
+					this.core().ui().error('Your city is missing the `' +
+						this.core().get_research_config_data(building_data.requires.research).name +
+						'` research needed to construct this building.');
 				}
 				return false;
 			}
@@ -1205,7 +1232,8 @@ class settlement {
 						const _z = this.core().get_building_config_data(item);
 						if (_z) {
 							if (this.is_player()) {
-								this.core().ui().error('You don`t have the required level ' + required[item] + ' ' + _z.name + '.');
+								this.core().ui().error('You don`t have the required level ' +
+									required[item] + ' ' + _z.name + '.');
 							}
 						}
 						return false;
@@ -1214,7 +1242,8 @@ class settlement {
 			}
 			if (!this.has_resources(building_data.cost)) {
 				if (this.is_player()) {
-					this.core().ui().error('You don`t have enough resources to construct this building.');
+					this.core().ui().error('You don`t have enough resources to ' +
+						'construct this building.');
 				}
 				return false;
 			}
@@ -1231,7 +1260,8 @@ class settlement {
 			if (this.is_player()) {
 				this.core().save_and_refresh();
 				this.core().ui().citymap_scrollto_building(_building);
-				this.core().ui().notify('A new ' + _building.name + ' was just constructed in your city.');
+				this.core().ui().notify('A new ' + _building.name + ' was just ' +
+					'built in your city.');
 				$('.tips').tipsy({
 					gravity: $.fn.tipsy.autoNS,
 					html: true
@@ -2201,7 +2231,8 @@ class settlement {
 					const s_price = game.calc_price(amount, item);
 					const item_discount_price = Math.ceil(game.RESOURCES[item].price + discount);
 					if (!this.has_storage_space_for(amount)) {
-						this.core().ui().error(this.name() + ' does not have enough storage space for <strong>' + amount + '</strong> ' + game.get_resource_name(item) + '.');
+						this.core().ui().error(this.name() + ' does not have enough storage ' +
+							'space for <strong>' + amount + '</strong> ' + game.get_resource_name(item) + '.');
 						return false;
 					}
 					if (this.dec_coins(price) === false) {
@@ -2216,12 +2247,18 @@ class settlement {
 					_settlement.inc_coins(s_price);
 					this.add_to_storage(item, amount);
 					this.remove_from_exports(_settlement, item, amount);
-					this.raise_influence(_settlement.id(), (is_double ? game.IMPORT_INFLUENCE * 2 : game.IMPORT_INFLUENCE));
+					this.raise_influence(_settlement.id(), (is_double ? game.IMPORT_INFLUENCE * 2 :
+						game.IMPORT_INFLUENCE));
 					this.raise_prestige(is_double ? game.IMPORT_PRESTIGE * 2 : game.IMPORT_PRESTIGE);
 					this.raise_fame(game.FAME_PER_TRADE);
 					this.core().ui().refresh();
 					if (this.is_player()) {
-						this.core().ui().notify(this.name() + ' bought <strong>' + amount + '</strong> ' + game.get_resource_name(item) + ' from ' + settlement + ' for <strong>' + item_discount_price + '</strong> ' + game.get_resource_name('coins') + ' each, for a total of <strong>' + price + '</strong> ' + game.get_resource_name('coins') + '.', 'World Market');
+						this.core().ui().notify(this.name() + ' bought <strong>' + amount + 
+							'</strong> ' + game.get_resource_name(item) + ' from ' + settlement + 
+							' for <strong>' + item_discount_price + '</strong> ' + 
+							game.get_resource_name('coins') + ' each, for a total of <strong>' + 
+							price + '</strong> ' + game.get_resource_name('coins') + 
+							'.', 'World Market');
 					}
 					return {
 						buyer: this.name(),
@@ -2234,7 +2271,8 @@ class settlement {
 				}
 			}
 			if (this.is_player()) {
-				this.core().ui().error('The settlement of <strong>' + settlement + '</strong> does not export the requested goods.');
+				this.core().ui().error('The settlement of <strong>' + settlement +
+					'</strong> does not export the requested goods.');
 			}
 		}
 		return false;
@@ -2336,7 +2374,12 @@ class settlement {
 					this.raise_fame(game.FAME_PER_TRADE);
 					this.core().ui().refresh();
 					if (this.is_player()) {
-						this.core().ui().notify(this.name() + ' sold <strong>' + amount + '</strong> ' + game.get_resource_name(item) + ' to ' + settlement + ' for <strong>' + item_discount_price + '</strong> ' + game.get_resource_name('coins') + ' each, for a total of <strong>' + price + '</strong> ' + game.get_resource_name('coins') + '.', 'World Market');
+						this.core().ui().notify(this.name() + ' sold <strong>' + amount +
+							'</strong> ' + game.get_resource_name(item) + ' to ' + settlement +
+							' for <strong>' + item_discount_price + '</strong> ' +
+							game.get_resource_name('coins') + ' each, for a total of <strong>' +
+							price + '</strong> ' + game.get_resource_name('coins') +
+							'.', 'World Market');
 					}
 					return {
 						seller: this.name(),

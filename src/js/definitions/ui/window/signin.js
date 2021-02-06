@@ -48,7 +48,8 @@ class ui_window_signin extends ui_window {
 				}
 				if (!core.load_game_data(password)) {
 					$(handle + ' .password').val('');
-					core.ui().error('Error decrypting the game data with the specified password. Try again.', 'Error', true);
+					core.ui().error('Error decrypting the game data with the ' +
+						'specified password. Try again.', 'Error', true);
 				} else {
 					self.destroy();
 				}
@@ -61,7 +62,8 @@ class ui_window_signin extends ui_window {
 							document.location.reload();
 						}
 					},
-					'Are you sure you want to restart the game? You will lose all progress on the current game!',
+					'Are you sure you want to restart the game? You will lose all ' +
+					'progress on the current game!',
 					'Civitas'
 				);
 				return false;

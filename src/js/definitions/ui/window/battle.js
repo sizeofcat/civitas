@@ -21,8 +21,10 @@ class ui_window_battle extends ui_window {
 		params.id = 'battle';
 		params.template = '<section id="window-{ID}" class="window">' +
 				'<div class="container">' +
-					'<div title="Attack and defense rating for the attacking army." class="tips attack"></div>' +
-					'<div title="Attack and defense rating for the defending army." class="tips defense"></div>' +
+					'<div title="Attack and defense rating for the attacking army." ' +
+					'class="tips attack"></div>' +
+					'<div title="Attack and defense rating for the defending army." ' +
+					'class="tips defense"></div>' +
 					'<div class="battleground"></div>' +
 					'<div title="Current turn." class="tips turns">1</div>' +
 					'<div class="status"></div>' +	

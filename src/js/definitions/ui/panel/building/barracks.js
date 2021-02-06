@@ -36,7 +36,8 @@ class ui_panel_barracks extends ui_panel {
 						'<div class="cost">' +
 							'<dl class="nomg">';
 				for (let res in game.SOLDIERS[item].cost) {
-					_t += '<dt>' + game.nice_numbers(game.SOLDIERS[item].cost[res]) + '</dt><dd>' + core.ui().resource_small_img(res) + '</dd>';
+					_t += '<dt>' + game.nice_numbers(game.SOLDIERS[item].cost[res]) +
+						'</dt><dd>' + core.ui().resource_small_img(res) + '</dd>';
 				}
 				_t += '</dl>' +
 						'</div>' +
@@ -46,7 +47,10 @@ class ui_panel_barracks extends ui_panel {
 								'<dt>Defense</dt><dd>' + game.SOLDIERS[item].defense + '</dd>' +
 							'</dl>' +
 						'</div>' +
-						'<img data-handle="' + item + '" title="Recruit ' + game.SOLDIERS[item].name + '" class="tips recruit-soldier" src="' + game.ASSETS_URL + 'images/assets/army/' + item.toLowerCase() + '.png" />' +
+						'<img data-handle="' + item + '" title="Recruit ' +
+						game.SOLDIERS[item].name + '" class="tips recruit-soldier" src="' +
+						game.ASSETS_URL + 'images/assets/army/' +
+						item.toLowerCase() + '.png" />' +
 					'</fieldset>';
 			}
 			_t += '</div>';
@@ -57,13 +61,15 @@ class ui_panel_barracks extends ui_panel {
 				if (settlement.has_resources(costs)) {
 					if (settlement.remove_resources(costs)) {
 						if (settlement.recruit_soldier(soldier)) {
-							core.ui().notify('A new ' + game.SOLDIERS[soldier].name + ' has been recruited.');
+							core.ui().notify('A new ' + game.SOLDIERS[soldier].name +
+								' has been recruited.');
 							self.on_refresh();
 							return false;
 						}
 					}
 				}
-				core.ui().error('You don`t have enough resources to recruit a ' + game.SOLDIERS[soldier].name + '.');
+				core.ui().error('You don`t have enough resources to recruit a ' +
+					game.SOLDIERS[soldier].name + '.');
 				return false;
 			});
 		};
@@ -72,9 +78,11 @@ class ui_panel_barracks extends ui_panel {
 			let settlement = core.get_settlement();
 			let building = core.get_settlement().get_building(this.params_data.handle);
 			if (building) {
-				$(this.handle + ' #tab-info').empty().append(core.ui().building_panel(this.params_data, building.level));
+				$(this.handle + ' #tab-info').empty()
+					.append(core.ui().building_panel(this.params_data, building.level));
 				$(this.handle + ' .army-list').empty().append('<fieldset>' +
-						'<legend>Current Army</legend>' + core.ui().army_list(settlement.army(), true) +
+						'<legend>Current Army</legend>' +
+						core.ui().army_list(settlement.army(), true) +
 					'</fieldset>');
 			} else {
 				this.destroy();

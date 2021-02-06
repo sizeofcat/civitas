@@ -26,13 +26,18 @@ class ui_panel_storage extends ui_panel {
 			let storage_space = settlement.storage();
 			let resources = settlement.get_resources();
 			$(this.handle + ' section').append(core.ui().tabs(game.RESOURCE_CATEGORIES));
-			$(this.handle + ' section').append('<p>Total storage space: <span class="total-storage">' + storage_space.all + '</span>, used: <span class="used-storage">' + storage_space.occupied + '</span></p>');
+			$(this.handle + ' section').append('<p>Total storage space: <span class="total-storage">' +
+				storage_space.all + '</span>, used: <span class="used-storage">' +
+				storage_space.occupied + '</span></p>');
 			for (let i = 0; i < game.RESOURCE_CATEGORIES.length; i++) {
-				$(this.handle + ' #tab-' + game.RESOURCE_CATEGORIES[i]).append('<div class="storage-board"></div>');
+				$(this.handle + ' #tab-' + game.RESOURCE_CATEGORIES[i])
+					.append('<div class="storage-board"></div>');
 			}
 			for (let resource in resources) {
 				if (!game.is_virtual_resource(resource)) {
-					$(this.handle + ' #tab-' + game.RESOURCES[resource].category + ' .storage-board').append(core.ui().resource_storage_el(resource, resources[resource]));
+					$(this.handle + ' #tab-' + game.RESOURCES[resource].category +
+						' .storage-board')
+						.append(core.ui().resource_storage_el(resource, resources[resource]));
 				}
 			}
 		};
@@ -42,7 +47,9 @@ class ui_panel_storage extends ui_panel {
 			let storage_space = settlement.storage();
 			for (let resource in resources) {
 				if (!game.is_virtual_resource(resource)) {
-					$(this.handle + ' #tab-' + game.RESOURCES[resource].category + ' .storage-board > .storage-item[data-resource="' + resource + '"] > .amount').empty().html(resources[resource]);
+					$(this.handle + ' #tab-' + game.RESOURCES[resource].category +
+						' .storage-board > .storage-item[data-resource="' +
+						resource + '"] > .amount').empty().html(resources[resource]);
 				}
 			}
 			$(this.handle + ' .total-storage').empty().append(storage_space.all);

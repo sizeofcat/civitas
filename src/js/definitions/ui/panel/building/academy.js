@@ -40,7 +40,10 @@ class ui_panel_academy extends ui_panel {
 			$(this.handle + ' #tab-technologies').empty().append(_t);
 			_t = '';
 			for (let i = 0; i < game.TECHNOLOGIES.length; i++) {
-				_t += '<div data-technology="' + game.TECHNOLOGIES[i].handle + '" class="technology"><img src="' + game.ASSETS_URL + 'images/assets/research/' + game.TECHNOLOGIES[i].handle + '.png" /></div>';
+				_t += '<div data-technology="' + game.TECHNOLOGIES[i].handle +
+					'" class="technology"><img src="' + game.ASSETS_URL +
+					'images/assets/research/' + game.TECHNOLOGIES[i].handle +
+					'.png" /></div>';
 			}
 			$(this.handle + ' .column-left').empty().append(_t);
 			$(self.handle + ' #tab-projects').empty().append('<p>Not implemented yet.</p>');
@@ -57,7 +60,10 @@ class ui_panel_academy extends ui_panel {
 						'<dd>' + technology.duration + ' days</dd>' +
 						'<dt>Cost</dt>';
 					for (let y in technology.cost) {
-						_t += '<dd>' + game.nice_numbers(technology.cost[y]) + ' <img class="small tips" title="' + game.get_resource_name(y) + '" src="' + game.ASSETS_URL + 'images/assets/resources/' + y + '.png" /></dd>';
+						_t += '<dd>' + game.nice_numbers(technology.cost[y]) +
+							' <img class="small tips" title="' + game.get_resource_name(y) +
+							'" src="' + game.ASSETS_URL + 'images/assets/resources/' +
+							y + '.png" /></dd>';
 					}
 					_t += '<dt>Effect</dt>';
 					for (let y in technology.effect) {
@@ -67,7 +73,8 @@ class ui_panel_academy extends ui_panel {
 								_t += '<dd>' + _z.name + ' +' + technology.effect[y][b] + '</dd>';
 							}
 						} else if (y === 'tax') {
-							_t += '<dd>+' + technology.effect[y] + core.ui().resource_small_img('coins') + ' each house</dd>';
+							_t += '<dd>+' + technology.effect[y] +
+								core.ui().resource_small_img('coins') + ' each house</dd>';
 						} else if (y === 'distance') {
 							_t += '<dd>Faster world map travel</dd>';
 						} else if (y === 'ruins') {
@@ -77,11 +84,15 @@ class ui_panel_academy extends ui_panel {
 					_t += '<div class="toolbar"></div>';
 					$(self.handle + ' .column-right').empty().append(_t);
 					if (core.has_research(technology.handle)) {
-						$(self.handle + ' .toolbar').empty().append('You already researched this technology.');
+						$(self.handle + ' .toolbar').empty().append('You already ' +
+							'researched this technology.');
 					} else if (core.in_queue(technology.handle) !== false) {
-						$(self.handle + ' .toolbar').empty().append('You are currently researching this technology.');
+						$(self.handle + ' .toolbar').empty().append('You are currently ' +
+							'researching this technology.');
 					} else {
-						$(self.handle + ' .toolbar').empty().append('<a href="#" class="btn do-research" data-technology="' + technology.handle + '">Research</a>');
+						$(self.handle + ' .toolbar').empty().append('<a href="#" ' +
+							'class="btn do-research" data-technology="' +
+							technology.handle + '">Research</a>');
 					}
 				}
 				return false;
@@ -101,10 +112,12 @@ class ui_panel_academy extends ui_panel {
 								core.save_and_refresh();
 							}
 						} else {
-							core.ui().error('You don`t have enough resources to research this technology.');
+							core.ui().error('You don`t have enough resources ' +
+								'to research this technology.');
 						}
 					} else {
-						core.ui().error('You can research only one technology at a time. Wait for the current research to finish.');
+						core.ui().error('You can research only one technology at a ' +
+							'time. Wait for the current research to finish.');
 					}
 				}
 				return false;
@@ -118,16 +131,21 @@ class ui_panel_academy extends ui_panel {
 			let _t = '';
 			let building = core.get_settlement().get_building(this.params_data.handle);
 			if (building) {
-				$(this.handle + ' #tab-info').empty().append(core.ui().building_panel(this.params_data, building.level));
+				$(this.handle + ' #tab-info').empty()
+					.append(core.ui().building_panel(this.params_data, building.level));
 				_t = '<h2>Research points</h2>' +
 					'<div class="section">' +
-						core.ui().progress((research * 100) / game.MAX_RESEARCH_VALUE, 'large', research + ' / ' + game.MAX_RESEARCH_VALUE) +
+						core.ui().progress((research * 100) /
+						game.MAX_RESEARCH_VALUE, 'large', research + ' / ' +
+						game.MAX_RESEARCH_VALUE) +
 					'</div>';
 				let queue_action = core.has_research_in_queue();
 				if (queue_action !== false) {
 					_t += '<h2>Currently researching `' + queue_action.data.name + '`</h2>' +
 					'<div class="section">' +
-						core.ui().progress((queue_action.passed * 100) / queue_action.duration, 'large', queue_action.passed + ' / ' + queue_action.duration + ' days') +
+						core.ui().progress((queue_action.passed * 100) /
+						queue_action.duration, 'large', queue_action.passed +
+						' / ' + queue_action.duration + ' days') +
 					'</div>';
 				}
 				$(this.handle + ' #tab-research').empty().append(_t);
@@ -136,7 +154,8 @@ class ui_panel_academy extends ui_panel {
 			}
 			for (let f = 0; f < technologies.length; f++) {
 				if (typeof technologies[f] !== 'undefined') {
-					$(this.handle + ' .technology[data-technology=' + technologies[f].handle + ']').addClass('has');
+					$(this.handle + ' .technology[data-technology=' +
+						technologies[f].handle + ']').addClass('has');
 				}
 			}
 		};

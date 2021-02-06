@@ -80,7 +80,9 @@ class ui_panel {
 		this.core().ui().log('ui', 'Creating panel with id `' + this.id + '`');
 		this.on_create.call(this, params);
 		let tpl = this.template.replace(/{ID}/g, params.id);
-		if (typeof this.params_data !== 'undefined' && typeof this.params_data.name !== 'undefined' && typeof this.params_data.name !== 'function') {
+		if (typeof this.params_data !== 'undefined' &&
+			typeof this.params_data.name !== 'undefined' &&
+			typeof this.params_data.name !== 'function') {
 			tpl = tpl.replace(/{BUILDING}/g, this.params_data.handle);
 			if (this.params_data.sidebar === true) {
 				$('.ui > aside').empty().append(tpl);
@@ -108,9 +110,11 @@ class ui_panel {
 				}
 				if (building.is_production_building()) {
 					if (!building.is_stopped()) {
-						$(this.handle + ' .pause').removeClass('start').attr('title', 'Stop production');
+						$(this.handle + ' .pause').removeClass('start')
+							.attr('title', 'Stop production');
 					} else {
-						$(this.handle + ' .start').removeClass('pause').attr('title', 'Start production');
+						$(this.handle + ' .start').removeClass('pause')
+							.attr('title', 'Start production');
 					}
 				} else {
 					$(this.handle + ' .start, ' + this.handle + ' .pause').hide();
@@ -186,7 +190,9 @@ class ui_panel {
 			self.destroy();
 			return false;
 		});
-		if ((typeof this.params_data === 'undefined') || (typeof this.params_data !== 'undefined' && this.params_data.sidebar !== true)) {
+		if ((typeof this.params_data === 'undefined') ||
+			(typeof this.params_data !== 'undefined' &&
+			this.params_data.sidebar !== true)) {
 			$(this.handle).draggable({
 				handle: 'header',
 				containment: 'window',

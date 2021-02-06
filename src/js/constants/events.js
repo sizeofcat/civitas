@@ -7,7 +7,8 @@
 game.EVENTS = [
 	{
 		name: 'Great earthquake',
-		description: 'A great earthquake sweeps across your city destroying the settlement`s BUILDING in the process.',
+		description: 'A great earthquake sweeps across your city destroying the ' +
+			'settlement`s BUILDING in the process.',
 		chance: 0.00001,
 		destroy: true
 	}, {

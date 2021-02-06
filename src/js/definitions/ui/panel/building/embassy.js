@@ -44,11 +44,14 @@ class ui_panel_embassy extends ui_panel {
 			let status = settlement.status();
 			let building = core.get_settlement().get_building(this.params_data.handle);
 			if (building) {
-				$(this.handle + ' #tab-info').empty().append(core.ui().building_panel(this.params_data, building.level));
+				$(this.handle + ' #tab-info').empty()
+					.append(core.ui().building_panel(this.params_data, building.level));
 				$(this.handle + ' #tab-espionage').empty().append(
 					'<h2>Espionage points</h2>' +
 					'<div class="section">' + 
-						core.ui().progress((settlement.espionage() * 100) / game.MAX_ESPIONAGE_VALUE, 'large', settlement.espionage() + ' / ' + game.MAX_ESPIONAGE_VALUE) + 
+						core.ui().progress((settlement.espionage() * 100) /
+						game.MAX_ESPIONAGE_VALUE, 'large', settlement.espionage() +
+						' / ' + game.MAX_ESPIONAGE_VALUE) + 
 					'</div>'
 				);
 				let _t = '<table class="normal">' +
@@ -66,19 +69,26 @@ class ui_panel_embassy extends ui_panel {
 					if (!settlements[i].is_ruins()) {
 						_t += '<tr>' +
 							'<td>' +
-								'<a data-id="' + settlements[i].id() + '" title="View info about this settlement." class="tips view" href="#">' + settlements[i].name() + '</a> ' +
+								'<a data-id="' + settlements[i].id() +
+								'" title="View info about this settlement." ' +
+								'class="tips view" href="#">' + settlements[i].name() + '</a> ' +
 							'</td>' +
 							'<td class="icon">' +
-								'<img class="avatar small" src="' + game.ASSETS_URL + 'images/assets/avatars/avatar' + settlements[i].ruler().avatar + '.png" />' +
+								'<img class="avatar small" src="' + game.ASSETS_URL +
+								'images/assets/avatars/avatar' + settlements[i].ruler().avatar +
+								'.png" />' +
 							'</td>' +
 							'<td>' +
-								'<div data-id="' + settlements[i].id() + '" >' + core.ui().progress(status[settlements[i].id()].influence, 'small') + '</div>' +
+								'<div data-id="' + settlements[i].id() + '" >' +
+								core.ui().progress(status[settlements[i].id()].influence, 'small') +
+								'</div>' +
 							'</td>' +
 							'<td>' +
 								'<p>' + settlements[i].religion().name + '</p>' +
 							'</td>' +
 							'<td>' +
-								'<p>' + settlement.get_diplomacy_status(settlements[i].id()).name + '</p>' +
+								'<p>' + settlement.get_diplomacy_status(settlements[i].id()).name +
+								'</p>' +
 							'</td>' +
 							'<td>' +
 								'<p>' + settlements[i].personality().name + '</p>' +

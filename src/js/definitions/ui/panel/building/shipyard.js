@@ -46,7 +46,10 @@ class ui_panel_shipyard extends ui_panel {
 								'<dt>Defense</dt><dd>' + game.SHIPS[item].defense + '</dd>' +
 							'</dl>' +
 						'</div>' +
-						'<img data-handle="' + item + '" title="Recruit ' + game.SHIPS[item].name + '" class="tips recruit-ship" src="' + game.ASSETS_URL + 'images/assets/navy/' + item.toLowerCase().replace(/ /g,"_") + '.png" />' +
+						'<img data-handle="' + item + '" title="Recruit ' +
+						game.SHIPS[item].name + '" class="tips recruit-ship" src="' +
+						game.ASSETS_URL + 'images/assets/navy/' +
+						item.toLowerCase().replace(/ /g,"_") + '.png" />' +
 					'</fieldset>';
 			}
 			_t += '</div>';
@@ -63,7 +66,8 @@ class ui_panel_shipyard extends ui_panel {
 						}
 					}
 				}
-				core.ui().error('You don`t have enough resources to recruit a ' + game.SHIPS[ship].name + '.');
+				core.ui().error('You don`t have enough resources to recruit a ' +
+					game.SHIPS[ship].name + '.');
 				return false;
 			});
 		};
@@ -72,7 +76,8 @@ class ui_panel_shipyard extends ui_panel {
 			let settlement = core.get_settlement();
 			let building = settlement.get_building(this.params_data.handle);
 			if (building) {
-				$(this.handle + ' #tab-info').empty().append(core.ui().building_panel(this.params_data, building.level));
+				$(this.handle + ' #tab-info').empty()
+					.append(core.ui().building_panel(this.params_data, building.level));
 				$(this.handle + ' .navy-list').empty().append('<fieldset>' +
 						'<legend>Current Navy</legend>' + core.ui().navy_list(settlement.navy(), true) +
 					'</fieldset>');

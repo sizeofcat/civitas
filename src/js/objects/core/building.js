@@ -23,7 +23,8 @@ class building {
 		this.name = params.data.name;
 		this.problems = false;
 		this.is_production = (typeof params.data.production !== 'undefined') ? true : false;
-		this.is_municipal = (typeof params.data.is_municipal !== 'undefined' && params.data.is_municipal === true) ? true : false;
+		this.is_municipal = (typeof params.data.is_municipal !== 'undefined' &&
+			params.data.is_municipal === true) ? true : false;
 		this.is_housing = (typeof params.data.tax !== 'undefined') ? true : false;
 		this.level = (typeof params.data.level !== 'undefined') ? params.data.level : 1;
 		this.position = (typeof params.data.position !== 'undefined') ? params.data.position : {
@@ -34,7 +35,8 @@ class building {
 		this.handle = params.data.handle;
 		params.data.level = this.level;
 		if (params.hidden !== true && this.settlement.is_player()) {
-			$('section.game').append(self.core().ui().building_element(params)).on('click', '#building-' + this.handle, function() {
+			$('section.game').append(self.core().ui()
+				.building_element(params)).on('click', '#building-' + this.handle, function() {
 				let panel = self.core().ui().panel_class_names[self.handle];
 				if (typeof panel !== 'undefined') {
 					self.core().ui().open_panel(self.handle, params.data);
@@ -51,7 +53,8 @@ class building {
 			this.core().ui().refresh();
 		}
 		if (typeof params.data.storage !== 'undefined') {
-			this.settlement.storage(this.settlement.storage().all + (params.data.storage * this.level));
+			this.settlement.storage(this.settlement.storage().all +
+				(params.data.storage * this.level));
 		}
 		return this;
 	}
@@ -124,7 +127,11 @@ class building {
 						building_image = this.type.slice(0, 5);
 					}
 					$('section.game .building[data-type=' + this.type + ']').css({
-						'background-image': 'url(' + game.ASSETS_URL + 'images/assets/buildings/' + ((typeof data.visible_upgrades === 'undefined' || data.visible_upgrades === false) ? building_image : building_image + this.level) + '.png)'
+						'background-image': 'url(' + game.ASSETS_URL +
+						'images/assets/buildings/' +
+						((typeof data.visible_upgrades === 'undefined' ||
+						data.visible_upgrades === false) ? building_image :
+						building_image + this.level) + '.png)'
 					});
 				}
 				if (typeof data.storage !== 'undefined') {
@@ -137,7 +144,8 @@ class building {
 				return true;
 			} else {
 				if (settlement.is_player()) {
-					core.ui().error('You don`t have enough resources to upgrade your ' + this.name + '.');
+					core.ui().error('You don`t have enough resources to upgrade your ' +
+						this.name + '.');
 				}
 				return false;
 			}
@@ -163,7 +171,10 @@ class building {
 					building_image = this.type.slice(0, 5);
 				}
 				$('section.game .building[data-type=' + this.type + ']').css({
-					'background-image': 'url(' + game.ASSETS_URL + 'images/assets/buildings/' + ((typeof data.visible_upgrades === 'undefined' || data.visible_upgrades === false) ? building_image + '1' : building_image + this.level) + '.png)'
+					'background-image': 'url(' + game.ASSETS_URL +
+					'images/assets/buildings/' + ((typeof data.visible_upgrades === 'undefined' ||
+					data.visible_upgrades === false) ? building_image + '1' :
+					building_image + this.level) + '.png)'
 				});
 				if (typeof data.storage !== 'undefined') {
 					settlement.storage(settlement.storage().all - data.storage);
@@ -288,7 +299,8 @@ class building {
 		} else {
 			if (settlement.is_player()) {
 				if (notify === true) {
-					this.core().ui().error('Unable to demolish the specified building `' + this.name + '`!');
+					this.core().ui().error('Unable to demolish the specified building `' +
+						this.name + '`!');
 				}
 			}
 			return false;
@@ -334,7 +346,8 @@ class building {
 				if (this.settlement.is_building_built(item, required[item])) {
 					parent = this.settlement.get_building(item);
 					if (parent && !parent.is_stopped()) {
-						good = parent.has_building_requirements() && parent.has_settlement_requirements();
+						good = parent.has_building_requirements() &&
+							parent.has_settlement_requirements();
 						if (good === false) {
 							return false;
 						}
@@ -386,7 +399,8 @@ class building {
 	 * @returns {Boolean}
 	 */
 	has_requirements () {
-		return this.has_building_requirements() && this.has_settlement_requirements() && this.has_research_requirements();
+		return this.has_building_requirements() && this.has_settlement_requirements() &&
+			this.has_research_requirements();
 	}
 
 	/**
@@ -502,7 +516,8 @@ class building {
 										this.log_to_console();
 									}
 								} else {
-									this.core().ui().log('game', 'There is no storage space in ' + settlement.name() + ' to accomodate the new goods.', true);
+									this.core().ui().log('game', 'There is no storage space in ' +
+										settlement.name() + ' to accomodate the new goods.', true);
 									this.problems = true;
 									return false;
 								}
@@ -519,7 +534,8 @@ class building {
 										this.log_to_console();
 									}
 								} else {
-									this.core().ui().log('game', 'There is no storage space in ' + settlement.name() + ' to accomodate the new goods.', true);
+									this.core().ui().log('game', 'There is no storage space in ' +
+										settlement.name() + ' to accomodate the new goods.', true);
 									this.problems = true;
 									return false;
 								}
@@ -534,7 +550,8 @@ class building {
 								this.log_to_console();
 							}
 						} else {
-							this.core().ui().log('game', 'There is no storage space in ' + settlement.name() + ' to accomodate the new goods.', true);
+							this.core().ui().log('game', 'There is no storage space in ' +
+								settlement.name() + ' to accomodate the new goods.', true);
 							this.problems = true;
 							return false;
 						}
@@ -619,7 +636,8 @@ class building {
 		let _m = '';
 		if (typeof building.production !== 'undefined') {
 			for (let item in building.production) {
-				_p += (building.production[item] * this.level + this.core().get_prod_modifier(building)) + ' ' + item + ', ';
+				_p += (building.production[item] * this.level +
+					this.core().get_prod_modifier(building)) + ' ' + item + ', ';
 			}
 			_p = _p.substring(0, _p.length - 2);
 		}
@@ -644,8 +662,10 @@ class building {
 			}
 		}
 		if (typeof building.tax !== 'undefined') {
-			this.core().ui().log('game', this.name + ' used ' + _m + ' and got taxed for ' + this.get_tax_amount(building.tax) + ' coins.');
-		} else if (typeof building.production !== 'undefined' && typeof building.materials === 'undefined') {
+			this.core().ui().log('game', this.name + ' used ' + _m +
+				' and got taxed for ' + this.get_tax_amount(building.tax) + ' coins.');
+		} else if (typeof building.production !== 'undefined' &&
+			typeof building.materials === 'undefined') {
 			this.core().ui().log('game', this.name + ' produced ' + _p + '.');
 		} else {
 			this.core().ui().log('game', this.name + ' used ' + _m + ' and produced ' + _p + '.');
@@ -667,7 +687,8 @@ class building {
 				let handle = $('section.game > #building-' + this.handle);
 				switch (notification_type) {
 					case game.NOTIFICATION_MISSING_REQ:
-						this.core().ui().log('game', this.name + ' doesn`t have one of the buildings required to be operational.', true);
+						this.core().ui().log('game', this.name +
+							' doesn`t have one of the buildings required to be operational.', true);
 						handle.empty().append('<span class="notification requirements"></span>');
 						break;
 					case game.NOTIFICATION_PAUSED:
@@ -675,12 +696,14 @@ class building {
 						handle.empty().append('<span class="notification paused"></span>');
 						break;
 					case game.NOTIFICATION_SETTLEMENT_LOW_LEVEL:
-						this.core().ui().log('game', 'Your settlement level is too low for ' + this.name + ' to be active.', true);
+						this.core().ui().log('game', 'Your settlement level is too low for ' +
+							this.name + ' to be active.', true);
 						handle.empty().append('<span class="notification lowlevel"></span>');
 						break;
 					case game.NOTIFICATION_MISSING_RES:
 					default:
-						this.core().ui().log('game', this.name + ' is missing materials for production.', true);
+						this.core().ui().log('game', this.name +
+							' is missing materials for production.', true);
 						handle.empty().append('<span class="notification error"></span>');
 						break;
 				}

@@ -40,8 +40,10 @@ class world {
 			mountains: '#B37D1A',
 			mountains_ice: '#DCDCE6'
 		};
-		this.seeds.moisture = typeof params.moisture !== 'undefined' && params.moisture !== null ? params.moisture : this.seed();
-		this.seeds.elevation = typeof params.elevation !== 'undefined' && params.elevation !== null ? params.elevation : this.seed();
+		this.seeds.moisture = typeof params.moisture !== 'undefined' &&
+			params.moisture !== null ? params.moisture : this.seed();
+		this.seeds.elevation = typeof params.elevation !== 'undefined' &&
+			params.elevation !== null ? params.elevation : this.seed();
 		this.data = typeof params.data !== 'undefined' ? params.data : [];
 		if (this.data.length === 0) {
 			this._create_array();
@@ -136,7 +138,11 @@ class world {
 				id: game.CLIMATE_POLAR,
 				name: game.CLIMATES[game.CLIMATE_POLAR]
 			};
-		} else if (terrain === 'grass' || terrain === 'temperate_deciduous_forest' || terrain === 'temperate_rain_forest' || terrain === 'hills' || terrain === 'mountains' || terrain === 'taiga' || terrain === 'shrubland' || terrain === 'beach' || terrain === 'scorched' || terrain === 'tundra' || terrain === 'bare') {
+		} else if (terrain === 'grass' || terrain === 'temperate_deciduous_forest' ||
+			terrain === 'temperate_rain_forest' || terrain === 'hills' ||
+			terrain === 'mountains' || terrain === 'taiga' || terrain === 'shrubland' ||
+			terrain === 'beach' || terrain === 'scorched' || terrain === 'tundra' ||
+			terrain === 'bare') {
 			return {
 				id: game.CLIMATE_TEMPERATE,
 				name: game.CLIMATES[game.CLIMATE_TEMPERATE]
@@ -490,7 +496,8 @@ class world {
 		} else if (settlement.is_metropolis()) {
 			for (let z = 0; z < neighbours.length; z++) {
 				hexes.push(neighbours[z]);
-				const new_neighbours = this.get_neighbouring_hexes(neighbours[z].y, neighbours[z].x);
+				const new_neighbours = this.get_neighbouring_hexes(neighbours[z].y,
+					neighbours[z].x);
 				for (let u = 0; u < new_neighbours.length; u++) {
 					hexes.push(new_neighbours[u]);
 				}
@@ -509,7 +516,8 @@ class world {
 		let terrain;
 		const neighbours = this.get_neighbours(settlement);
 		for (let i = 0; i < neighbours.length; i++) {
-			if ((neighbours[i].x >= 0 && neighbours[i].x < game.WORLD_SIZE_WIDTH) && (neighbours[i].y >= 0 && neighbours[i].y < game.WORLD_SIZE_HEIGHT)) {
+			if ((neighbours[i].x >= 0 && neighbours[i].x < game.WORLD_SIZE_WIDTH) &&
+				(neighbours[i].y >= 0 && neighbours[i].y < game.WORLD_SIZE_HEIGHT)) {
 				terrain = this.get_hex_terrain(neighbours[i]);
 				this.lock_hex(neighbours[i], settlement.id());
 				if (terrain === 'ocean') {
@@ -576,7 +584,8 @@ class world {
 	 * @returns {Number}
 	 */
 	get_distance (source, destination) {
-		return Math.floor(Math.sqrt(Math.pow(destination.x - source.x, 2) + Math.pow(destination.y - source.y, 2))) * 100;
+		return Math.floor(Math.sqrt(Math.pow(destination.x - source.x, 2) +
+			Math.pow(destination.y - source.y, 2))) * 100;
 	}
 
 	/**
@@ -587,7 +596,8 @@ class world {
 	 * @returns {Number}
 	 */
 	get_distance_in_days (source, destination) {
-		return Math.floor((Math.sqrt(Math.pow(destination.x - source.x, 2) + Math.pow(destination.y - source.y, 2)) * 100) / 15);
+		return Math.floor((Math.sqrt(Math.pow(destination.x - source.x, 2) +
+			Math.pow(destination.y - source.y, 2)) * 100) / 15);
 	}
 
 	/**

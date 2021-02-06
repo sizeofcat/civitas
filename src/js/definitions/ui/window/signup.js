@@ -23,12 +23,16 @@ class ui_window_signup extends ui_window {
 				'<div class="logo">Civitas</div>' +
 				'<fieldset>' +
 					'<div class="new-game">' +
-						'<img class="avatar-select-top" src="' + game.ASSETS_URL + 'images/assets/avatars/avatar1.png">' +
-						'<p>Choose your city details well, climate and game difficulty affects your building options and resources.</p>' +
+						'<img class="avatar-select-top" src="' + game.ASSETS_URL +
+						'images/assets/avatars/avatar1.png">' +
+						'<p>Choose your city details well, climate and game ' +
+						'difficulty affects your building options and resources.</p>' +
 						'<dl>' +
 							'<dt class="clearfix">Your Name:</dt>' +
 							'<dd>' +
-								'<input type="text" maxlength="12" title="Maximum of 12 characters." class="tips name text-input" />' +
+								'<input type="text" maxlength="12" ' +
+								'title="Maximum of 12 characters." ' +
+								'class="tips name text-input" />' +
 							'</dd>' +
 ((game.ENCRYPTION === true) ?
 							'<dt class="clearfix">Password:</dt>' +
@@ -43,7 +47,9 @@ class ui_window_signup extends ui_window {
 							'<div class="hr"></div>' +
 							'<dt class="clearfix">City Name:</dt>' +
 							'<dd>' +
-								'<input type="text" maxlength="12" title="Maximum of 12 characters." class="tips cityname text-input" />' +
+								'<input type="text" maxlength="12" ' +
+								'title="Maximum of 12 characters." class="tips ' +
+								'cityname text-input" />' +
 							'</dd>' +
 							'<dt class="clearfix">Nationality:</dt>' +
 							'<dd>' +
@@ -77,13 +83,20 @@ class ui_window_signup extends ui_window {
 			let core = this.core();
 			let handle = this.handle;
 			for (let i = 1; i < game.CLIMATES.length; i++) {
-				$(handle + ' .climate').append('<option value="' + game['CLIMATE_' + game.CLIMATES[i].toUpperCase()] + '">' + game.CLIMATES[i].capitalize() + '</option>');
+				$(handle + ' .climate').append('<option value="' +
+					game['CLIMATE_' + game.CLIMATES[i].toUpperCase()] + '">' +
+					game.CLIMATES[i].capitalize() + '</option>');
 			}
 			for (let i = 1; i < game.NATIONS.length; i++) {
-				$(handle + ' .nation').append('<option value="' + game['NATION_' + game.NATIONS[i].toUpperCase()] + '">' + game.NATIONS[i].capitalize() + '</option>');
+				$(handle + ' .nation').append('<option value="' +
+					game['NATION_' + game.NATIONS[i].toUpperCase()] + '">' +
+					game.NATIONS[i].capitalize() + '</option>');
 			}
 			for (let i = 1; i <= game.AVATARS; i++) {
-				$(handle + ' .avatar-select').append('<img class="avatar' + (i === avatar ? ' selected' : '') + '" data-avatar="' + i + '" src="' + game.ASSETS_URL + 'images/assets/avatars/avatar' + i + '.png" />');
+				$(handle + ' .avatar-select').append('<img class="avatar' +
+					(i === avatar ? ' selected' : '') + '" data-avatar="' + i +
+					'" src="' + game.ASSETS_URL +
+					'images/assets/avatars/avatar' + i + '.png" />');
 			}
 			$(handle).on('click', '.do-start', function () {
 				if (game.ENCRYPTION === true) {
@@ -102,16 +115,19 @@ class ui_window_signup extends ui_window {
 					cityname = cityname.substring(0, 12);
 				}
 				if (name === '') {
-					core.ui().error('Enter your ruler name, for example <strong>Ramses</strong>.', 'Error', true);
+					core.ui().error('Enter your ruler name, for example ' +
+						'<strong>Ramses</strong>.', 'Error', true);
 					return false;
 				}
 				if (cityname === '') {
-					core.ui().error('Enter your city name, for example <strong>Alexandria</strong>.', 'Error', true);
+					core.ui().error('Enter your city name, for example ' +
+						'<strong>Alexandria</strong>.', 'Error', true);
 					return false;
 				}
 				if (game.ENCRYPTION === true) {
 					if (password === '') {
-						core.ui().error('Enter a strong password for your city.', 'Error', true);
+						core.ui().error('Enter a strong password for ' +
+							'your city.', 'Error', true);
 						return false;
 					}
 					if (password !== password2) {
@@ -128,7 +144,8 @@ class ui_window_signup extends ui_window {
 				let new_avatar = parseInt($(this).data('avatar'), 10);
 				if (new_avatar >= 1 && new_avatar <= game.AVATARS) {
 					avatar = new_avatar;
-					$('.avatar-select-top').attr('src', game.ASSETS_URL + 'images/assets/avatars/avatar' + avatar + '.png');
+					$('.avatar-select-top').attr('src', game.ASSETS_URL +
+						'images/assets/avatars/avatar' + avatar + '.png');
 				}
 				return false;
 			}).on('click', '.avatar-select-top', function() {

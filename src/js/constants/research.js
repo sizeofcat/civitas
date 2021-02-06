@@ -26,7 +26,8 @@ game.TECHNOLOGIES = [
 	{
 		name: 'Agriculture',
 		handle: 'agriculture',
-		description: 'The development of agriculture enables the human population to grow many times larger than could be sustained by hunting and gathering.',
+		description: 'The development of agriculture enables the human population to ' +
+			'grow many times larger than could be sustained by hunting and gathering.',
 		duration: 80,
 		cost: {
 			research: 500,
@@ -84,7 +85,9 @@ game.TECHNOLOGIES = [
 	}, {
 		name: 'Canned Food',
 		handle: 'cannedfood',
-		description: 'Canning is a method of preserving food in which the food contents are processed and sealed in an airtight container (jars like Mason jars, and steel and tin cans).',
+		description: 'Canning is a method of preserving food in which the food ' +
+			'contents are processed and sealed in an airtight container (jars ' +
+			'like Mason jars, and steel and tin cans).',
 		duration: 50,
 		cost: {
 			research: 500,
@@ -104,7 +107,9 @@ game.TECHNOLOGIES = [
 	}, {
 		name: 'Circular Saw',
 		handle: 'circularsaw',
-		description: 'The circular saw was invented around the end of the 18th century as a rip-saw to convert logs into lumber in sawmills and various claims have been made as to who invented the circular saw.',
+		description: 'The circular saw was invented around the end of the ' +
+			'18th century as a rip-saw to convert logs into lumber in sawmills ' +
+			'and various claims have been made as to who invented the circular saw.',
 		duration: 120,
 		cost: {
 			research: 300,
@@ -121,7 +126,8 @@ game.TECHNOLOGIES = [
 	}, {
 		name: 'Diplomacy',
 		handle: 'diplomacy',
-		description: 'Researching diplomacy will give a boost to your Embassy`s production of fame and espionage.',
+		description: 'Researching diplomacy will give a boost to your Embassy`s ' +
+			'production of fame and espionage.',
 		duration: 320,
 		cost: {
 			research: game.MAX_RESEARCH_VALUE,
@@ -140,7 +146,8 @@ game.TECHNOLOGIES = [
 	}, {
 		name: 'Distillery',
 		handle: 'distillery',
-		description: 'If you need more beer or wine in your settlement, research this technology.',
+		description: 'If you need more beer or wine in your settlement, research ' +
+			'this technology.',
 		duration: 120,
 		cost: {
 			research: 500,
@@ -178,7 +185,8 @@ game.TECHNOLOGIES = [
 	}, {
 		name: 'Minerals',
 		handle: 'minerals',
-		description: 'Digging deeper into the mountains, your settlers will find more minerals if you research this technology.',
+		description: 'Digging deeper into the mountains, your settlers will find more ' +
+			'minerals if you research this technology.',
 		duration: 120,
 		cost: {
 			research: 700,
@@ -197,7 +205,8 @@ game.TECHNOLOGIES = [
 	}, {
 		name: 'Projectiles',
 		handle: 'projectiles',
-		description: 'Researching heavy projectiles will give a production boost to your Cannon Foundry and Catapult Workshop.',
+		description: 'Researching heavy projectiles will give a production boost ' +
+			'to your Cannon Foundry and Catapult Workshop.',
 		duration: 200,
 		cost: {
 			research: game.MAX_RESEARCH_VALUE,
@@ -218,7 +227,8 @@ game.TECHNOLOGIES = [
 	}, {
 		name: 'Railway',
 		handle: 'railway',
-		description: 'Researching the railway will break in half the time required to travel from one city to another.',
+		description: 'Researching the railway will break in half the time required ' +
+			'to travel from one city to another.',
 		duration: 300,
 		cost: {
 			research: game.MAX_RESEARCH_VALUE,
@@ -235,7 +245,8 @@ game.TECHNOLOGIES = [
 	}, {
 		name: 'Sewing machine',
 		handle: 'sewingmachine',
-		description: 'Sewing machine technology will give a boost to your buildings responsible with manufacturing clothes and textile goods.',
+		description: 'Sewing machine technology will give a boost to your buildings ' +
+			'responsible with manufacturing clothes and textile goods.',
 		duration: 36,
 		cost: {
 			research: 500,
@@ -257,7 +268,8 @@ game.TECHNOLOGIES = [
 	}, {
 		name: 'Taxation',
 		handle: 'taxation',
-		description: 'Researching taxation will provide an extra 100 coins from each of your houses, regardless of their level.',
+		description: 'Researching taxation will provide an extra 100 coins from ' +
+			'each of your houses, regardless of their level.',
 		duration: 260,
 		cost: {
 			research: game.MAX_RESEARCH_VALUE,
@@ -271,7 +283,8 @@ game.TECHNOLOGIES = [
 	}, {
 		name: 'Trawlers',
 		handle: 'trawlers',
-		description: 'Researching this technology will provide your ships with better trawl nets, therefore giving a boost to your settlement`s Shipyard.',
+		description: 'Researching this technology will provide your ships with ' +
+			'better trawl nets, therefore giving a boost to your settlement`s Shipyard.',
 		duration: 36,
 		cost: {
 			research: 200,

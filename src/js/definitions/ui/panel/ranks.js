@@ -73,7 +73,9 @@ class ui_panel_ranks extends ui_panel {
 				_t += '<tr>' +
 					'<td class="center">' + (i + 1) + '</td>' +
 					'<td>' +
-						'<a data-id="' + ranking_list[i].id + '" title="View info about this settlement." class="tips view" href="#">' + ranking_list[i].name + '</a> ' +
+						'<a data-id="' + ranking_list[i].id +
+						'" title="View info about this settlement." class="tips view" href="#">' +
+						ranking_list[i].name + '</a> ' +
 					'</td>' +
 					'<td class="center">' + ranking_list[i].data.score + '</td>' +
 				'</tr>';

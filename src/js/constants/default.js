@@ -49,7 +49,10 @@ game.AVATARS = 99;
  * @constant
  * @type {String}
  */
-game.VERSION = '0.3.0.' + ((new Date()).getMonth() + 1) + '' + (new Date()).getDate() + '' + (new Date()).getFullYear();
+game.VERSION = '0.3.0.' +
+	((new Date()).getMonth() + 1) + '' +
+	(new Date()).getDate() + '' +
+	(new Date()).getFullYear();
 
 /**
  * Whether the application is in debug mode.

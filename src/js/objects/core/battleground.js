@@ -83,7 +83,8 @@ class battleground {
 		let remaining = 0;
 		let _a;
 		if (city && source.moved) {
-			this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name + '</strong> already used up its turn.');
+			this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name +
+				'</strong> already used up its turn.');
 			return false;
 		}
 		if (source !== null && destination !== null && city && city2) {
@@ -94,20 +95,27 @@ class battleground {
 			}
 			if (typeof is_ranged !== 'undefined') {
 				if ((Math.abs(cell.y - sy) + Math.abs(cell.x - sx)) > is_ranged) {
-					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name + '</strong> is not close enough for a ranged attack.');
+					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name +
+						'</strong> is not close enough for a ranged attack.');
 					return false;
 				}
 				let attack = Math.ceil(source.attack / 2);
 				let defense = destination.defense;
 				if (defense - attack < 0) {
 					this[_a].army[destination.item] = 0;
-					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name + '</strong> attacked ' + city2.name() + '`s <strong>' + game.SOLDIERS[destination.item].name + '</strong> for ' + attack + ' damage from range and killed its opponent.');
+					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name +
+						'</strong> attacked ' + city2.name() + '`s <strong>' +
+						game.SOLDIERS[destination.item].name + '</strong> for ' + attack +
+						' damage from range and killed its opponent.');
 					this._cell_empty(cell);
 				} else {
 					remaining = Math.ceil((defense - attack) / game.SOLDIERS[destination.item].defense);
 					destination.total = remaining;
 					this[_a].army[destination.item] = remaining;
-					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name + '</strong> attacked ' + city2.name() + '`s <strong>' + game.SOLDIERS[destination.item].name + '</strong> for ' + attack + ' damage from range.');
+					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name +
+						'</strong> attacked ' + city2.name() + '`s <strong>' +
+						game.SOLDIERS[destination.item].name + '</strong> for ' + attack +
+						' damage from range.');
 				}
 				this._cell_under_attack(cell);
 				source.moved = true;
@@ -115,20 +123,27 @@ class battleground {
 			} else {
 				let can_move = game.SOLDIERS[this._grid[sy][sx].item].moves;
 				if ((Math.abs(cell.y - sy) + Math.abs(cell.x - sx)) > can_move) {
-					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name + '</strong> doesn`t have a ranged attack.');
+					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name +
+						'</strong> doesn`t have a ranged attack.');
 					return false;
 				}
 				let attack = Math.ceil(source.attack / 2);
 				let defense = destination.defense;
 				if (defense - attack < 0) {
 					this[_a].army[destination.item] = 0;
-					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name + '</strong> attacked ' + city2.name() + '`s <strong>' + game.SOLDIERS[destination.item].name + '</strong> for ' + attack + ' damage in melee and killed its opponent.');
+					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name +
+						'</strong> attacked ' + city2.name() + '`s <strong>' +
+						game.SOLDIERS[destination.item].name + '</strong> for ' + attack +
+						' damage in melee and killed its opponent.');
 					this._cell_empty(cell);
 				} else {
 					remaining = Math.ceil((defense - attack) / game.SOLDIERS[destination.item].defense);
 					destination.total = remaining;
 					this[_a].army[destination.item] = remaining;
-					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name + '</strong> attacked ' + city2.name() + '`s <strong>' + game.SOLDIERS[destination.item].name + '</strong> for ' + attack + ' damage in melee.');
+					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name +
+						'</strong> attacked ' + city2.name() + '`s <strong>' +
+						game.SOLDIERS[destination.item].name + '</strong> for ' + attack +
+						' damage in melee.');
 				}
 				this._cell_under_attack(cell);
 				source.moved = true;
@@ -212,8 +227,12 @@ class battleground {
 	 * @returns {Object}
 	 */
 	show_stats () {
-		$(this._elements.attack).empty().append(this.core().get_settlement(this._attack.city).name() + ' ' + this._stats.attacking.attack + ' / ' + this._stats.attacking.defense);
-		$(this._elements.defense).empty().append(this.core().get_settlement(this._defense.city).name() + ' ' + this._stats.defending.attack + ' / ' + this._stats.defending.defense);
+		$(this._elements.attack).empty().append(
+			this.core().get_settlement(this._attack.city).name() + ' ' +
+			this._stats.attacking.attack + ' / ' + this._stats.attacking.defense);
+		$(this._elements.defense).empty().append(
+			this.core().get_settlement(this._defense.city).name() + ' ' +
+			this._stats.defending.attack + ' / ' + this._stats.defending.defense);
 		return {
 			attack: this._attack,
 			defense: this._defense
@@ -246,7 +265,8 @@ class battleground {
 			template += '<ol class="' + mode + '">';
 			for (let x = 0; x <= this._properties.width - 1; x++) {
 				this._grid[y][x] = null;
-				template += '<li data-pos="' + x + '-' + y + '" data-x="' + x + '" data-y="' + y + '" class="cell empty"></li>';
+				template += '<li data-pos="' + x + '-' + y + '" data-x="' + x +
+					'" data-y="' + y + '" class="cell empty"></li>';
 			}
 			template += '</ol>';
 			if (mode === 'even') {
@@ -411,7 +431,8 @@ class battleground {
 			settlement.army = settlement.load_army(loser.army);
 			settlement.navy = settlement.load_navy(loser.navy);
 			let spoils = settlement.get_spoils();
-			this.core().queue_add(settlement, my_settlement, game.ACTION_CAMPAIGN, game.CAMPAIGN_ARMY_RETURN, {
+			this.core().queue_add(settlement, my_settlement, game.ACTION_CAMPAIGN,
+				game.CAMPAIGN_ARMY_RETURN, {
 				army: winner.army,
 				navy: winner.navy,
 				resources: spoils
@@ -423,7 +444,8 @@ class battleground {
 			let has_loser_army = settlement.num_soldiers(loser.army);
 			let has_loser_navy = settlement.num_ships(loser.navy);
 			if (has_loser_army > 0 || has_loser_navy > 0) {
-				this.core().queue_add(my_settlement, settlement, game.ACTION_CAMPAIGN, game.CAMPAIGN_ARMY_RETURN, {
+				this.core().queue_add(my_settlement, settlement, game.ACTION_CAMPAIGN,
+					game.CAMPAIGN_ARMY_RETURN, {
 					army: loser.army,
 					navy: loser.navy,
 					resources: {}
@@ -451,7 +473,8 @@ class battleground {
 			let has_loser_army = settlement.num_soldiers(loser.army);
 			let has_loser_navy = settlement.num_ships(loser.navy);
 			if (has_loser_army > 0 || has_loser_navy > 0) {
-				this.core().queue_add(settlement, my_settlement, game.ACTION_CAMPAIGN, game.CAMPAIGN_ARMY_RETURN, {
+				this.core().queue_add(settlement, my_settlement, game.ACTION_CAMPAIGN,
+					game.CAMPAIGN_ARMY_RETURN, {
 					army: loser.army,
 					navy: loser.navy,
 					resources: {}
@@ -462,7 +485,8 @@ class battleground {
 			my_settlement.army = my_settlement.load_army(loser.army);
 			my_settlement.navy = my_settlement.load_navy(loser.navy);
 			let spoils = my_settlement.get_spoils();
-			this.core().queue_add(my_settlement, settlement, game.ACTION_CAMPAIGN, game.CAMPAIGN_ARMY_RETURN, {
+			this.core().queue_add(my_settlement, settlement, game.ACTION_CAMPAIGN,
+				game.CAMPAIGN_ARMY_RETURN, {
 				army: winner.army,
 				navy: winner.navy,
 				resources: spoils
@@ -500,7 +524,8 @@ class battleground {
 			let destination = this._grid[cell.y][cell.x];
 			let city = this.core().get_settlement(source.city);
 			if (source !== null && source.moved) {
-				this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name + '</strong> already used up its turn.');
+				this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name +
+					'</strong> already used up its turn.');
 				return false;
 			}
 			if (source !== null && destination === null && city) {
@@ -510,11 +535,15 @@ class battleground {
 					this._cell_empty(this._from);
 					this._from = null;
 					this._grid[cell.y][cell.x].moved = true;
-					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name + '</strong> moved to ' + (cell.x + 1) + 'x' + (cell.y + 1) + '.');
+					this.log(city.name() + '`s <strong>' +
+						game.SOLDIERS[source.item].name + '</strong> moved to ' + 
+						(cell.x + 1) + 'x' + (cell.y + 1) + '.');
 					this.redraw();
 					return true;
 				} else {
-					this.log(city.name() + '`s <strong>' + game.SOLDIERS[source.item].name + '</strong> is unable to move to the specified location.');
+					this.log(city.name() + '`s <strong>' +
+						game.SOLDIERS[source.item].name + '</strong> is unable to ' +
+						'move to the specified location.');
 					return false;
 				}
 			}
@@ -540,7 +569,8 @@ class battleground {
 					if (!source.moved && can_move && (Math.abs(y - sy) +
 						Math.abs(x - sx)) <= can_move) {
 						if (this._grid[y][x] === null) {
-							$(this._elements.container + ' .cell[data-pos=' + x + '-' + y + ']').addClass('canmove');
+							$(this._elements.container + ' .cell[data-pos=' + x +
+								'-' + y + ']').addClass('canmove');
 						}
 					}
 				}
@@ -550,7 +580,8 @@ class battleground {
 				for (let x = 0; x < this._grid[y].length; x++) {
 					if (!source.moved && (Math.abs(y - sy) + Math.abs(x - sx)) <= is_ranged) {
 						if (this._grid[y][x] === null) {
-							$(this._elements.container + ' .cell[data-pos=' + x + '-' + y + ']').addClass('canattack');
+							$(this._elements.container + ' .cell[data-pos=' + x +
+								'-' + y + ']').addClass('canattack');
 						}
 					}
 				}
@@ -567,7 +598,8 @@ class battleground {
 	 * @returns {battleground}
 	 */
 	_cell_under_attack (cell) {
-		$(this._elements.container + ' .cell[data-pos=' + cell.x + '-' + cell.y + ']').addClass('scale').delay(1000).queue(function() {
+		$(this._elements.container + ' .cell[data-pos=' + cell.x + '-' +
+			cell.y + ']').addClass('scale').delay(1000).queue(function() {
 			$(this).removeClass('scale').dequeue();
 		});
 		return this;
@@ -621,7 +653,8 @@ class battleground {
 	 */
 	_cell_select (cell) {
 		$(this._elements.container + ' .cell').removeClass('selected canmove canattack');
-		$(this._elements.container + ' .cell[data-pos=' + cell.x + '-' + cell.y + ']').addClass('selected');
+		$(this._elements.container + ' .cell[data-pos=' + cell.x + '-' +
+			cell.y + ']').addClass('selected');
 		this._from = cell;
 		this.highlight_cells(cell);
 		return this;
@@ -647,7 +680,10 @@ class battleground {
 			.attr('data-soldier', army.item)
 			.removeClass('empty canmove canattack selected')
 			.empty()
-			.append('<span class="moves' + (army.moved === false ? ' has' : '') + '"></span><img class="tips" title="' + game.SOLDIERS[army.item].name + '" src="' + game.ASSETS_URL + 'images/assets/army/' + army.item + '.png" />' + '<span class="amount">' + army.total + '</span>');
+			.append('<span class="moves' + (army.moved === false ? ' has' : '') +
+				'"></span><img class="tips" title="' + game.SOLDIERS[army.item].name +
+				'" src="' + game.ASSETS_URL + 'images/assets/army/' + army.item +
+				'.png" />' + '<span class="amount">' + army.total + '</span>');
 		return this;
 	}
 

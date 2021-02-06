@@ -42,12 +42,18 @@ class ui_window_options extends ui_window {
 				'Gameplay'
 			]));
 			$(handle + ' #tab-sounds').append('<div>' +
-				'<a href="#" class="music-control ui-control ' + ((core.get_settings('music') === true) ? 'on' : 'off') + '">music</a>' +
-				'<input class="music-volume" type="range" min="0" max="1" step="0.1" ' + ((core.get_settings('music') !== true) ? 'disabled' : '') + ' />' +
+				'<a href="#" class="music-control ui-control ' +
+				((core.get_settings('music') === true) ? 'on' : 'off') + '">music</a>' +
+				'<input class="music-volume" type="range" min="0" max="1" step="0.1" ' +
+				((core.get_settings('music') !== true) ? 'disabled' : '') + ' />' +
 				'</div>');
 			$(handle + ' #tab-ui').append('<div>' +
-				'<a href="#" class="worldmap-grid-control ui-control ' + ((core.get_settings('worldmap_grid') === true) ? 'on' : 'off') + '">worldmap grid</a> ' +
-				'<a href="#" class="worldmap-beautify-control ui-control ' + ((core.get_settings('worldmap_beautify') === true) ? 'on' : 'off') + '">worldmap beautify</a>' +
+				'<a href="#" class="worldmap-grid-control ui-control ' +
+				((core.get_settings('worldmap_grid') === true) ? 'on' : 'off') +
+				'">worldmap grid</a> ' +
+				'<a href="#" class="worldmap-beautify-control ui-control ' +
+				((core.get_settings('worldmap_beautify') === true) ? 'on' : 'off') +
+				'">worldmap beautify</a>' +
 				'</div>');
 			$(handle + ' .tabs').tabs();
 			$(handle).on('click', '.do-resume', function () {
@@ -80,7 +86,8 @@ class ui_window_options extends ui_window {
 							document.location.reload();
 						}
 					},
-					'Are you sure you want to restart the game? You will lose all progress on the current game!',
+					'Are you sure you want to restart the game? You will lose all ' +
+					'progress on the current game!',
 					'Civitas'
 				);
 				return false;

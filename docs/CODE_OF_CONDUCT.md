@@ -1,6 +1,5 @@
 # Civitas Code of Conduct
 
-
 This is not a community project. This is my project. I know that will disappoint some people, but I do this for fun in my own spare time. If it stops being fun, I will stop working on it, which will pretty much kill the project. There are millions of projects in the world and the only reason they continue (if they actually do) is because the maintainers stubbornly stick at it.
 
 With that in mind, here is the code of conduct: If it is fun for me then it is good. If it is not fun for me, then it is not good.

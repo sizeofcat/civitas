@@ -79,7 +79,10 @@ game.HEROES = [
 	{
 		name: 'Achilles',
 		handle: 'achilles',
-		description: 'Achilles is a Greek hero of the Trojan War and the central character and greatest warrior of Homer`s Iliad. His mother is the immortal nymph Thetis, and his father, the mortal Peleus, is the king of the Myrmidons.',
+		description: 'Achilles is a Greek hero of the Trojan War and the central ' +
+			'character and greatest warrior of Homer`s Iliad. His mother is ' +
+			'the immortal nymph Thetis, and his father, the mortal Peleus, is ' +
+			'the king of the Myrmidons.',
 		price: 5000000,
 		link: 'https://en.wikipedia.org/wiki/Achilles',
 		stats: {
@@ -98,7 +101,11 @@ game.HEROES = [
 	}, {
 		name: 'Hector',
 		handle: 'hector',
-		description: 'In Greek mythology and Roman Mythology, Hector is a Trojan prince and the greatest fighter for Troy in the Trojan War. As the first-born son of King Priam and Queen Hecuba, who was a descendant of Dardanus and Tros, the founder of Troy, he is a prince of the royal house and the heir apparent to his father`s throne.',
+		description: 'In Greek mythology and Roman Mythology, Hector is a Trojan ' +
+			'prince and the greatest fighter for Troy in the Trojan War. As the ' +
+			'first-born son of King Priam and Queen Hecuba, who was a descendant ' +
+			'of Dardanus and Tros, the founder of Troy, he is a prince of the royal ' +
+			'house and the heir apparent to his father`s throne.',
 		price: 4000000,
 		link: 'https://en.wikipedia.org/wiki/Hector',
 		stats: {
@@ -118,7 +125,8 @@ game.HEROES = [
 	}, {
 		name: 'Hannibal',
 		handle: 'hannibal',
-		description: 'Hannibal Barca is a Carthaginian general, considered one of the greatest military commanders in history.',
+		description: 'Hannibal Barca is a Carthaginian general, considered one ' +
+			'of the greatest military commanders in history.',
 		price: 3000000,
 		link: 'https://en.wikipedia.org/wiki/Hannibal',
 		stats: {
@@ -136,7 +144,12 @@ game.HEROES = [
 	}, {
 		name: 'Heracles',
 		handle: 'heracles',
-		description: 'Heracles is a divine hero in Greek mythology, the son of Zeus and Alcmene, foster son of Amphitryon and great-grandson and half-brother (as they are both sired by the god Zeus) of Perseus.<br /><br />He is the greatest of the Greek heroes, a paragon of masculinity, the ancestor of royal clans who claim to be Heracleidae, and a champion of the Olympian order against chthonic monsters.',
+		description: 'Heracles is a divine hero in Greek mythology, the son of Zeus ' +
+			'and Alcmene, foster son of Amphitryon and great-grandson and half-brother ' +
+			'(as they are both sired by the god Zeus) of Perseus.<br /><br />He is ' +
+			'the greatest of the Greek heroes, a paragon of masculinity, the ancestor ' +
+			'of royal clans who claim to be Heracleidae, and a champion of the ' +
+			'Olympian order against chthonic monsters.',
 		price: 5000000,
 		link: 'https://en.wikipedia.org/wiki/Heracles',
 		stats: {
@@ -165,7 +178,10 @@ game.HEROES = [
 	}, {
 		name: 'Akhenaten',
 		handle: 'akhenaten',
-		description: 'Akhenaten, known before the fifth year of his reign as Amenhotep IV (sometimes given its Greek form, Amenophis IV, and meaning "Amun Is Satisfied"), is an Ancient Egyptian pharaoh of the 18th Dynasty who ruled for 17 years.',
+		description: 'Akhenaten, known before the fifth year of his reign as ' +
+			'Amenhotep IV (sometimes given its Greek form, Amenophis IV, and meaning ' +
+			'"Amun Is Satisfied"), is an Ancient Egyptian pharaoh of the 18th ' +
+			'Dynasty who ruled for 17 years.',
 		price: 1000000,
 		link: 'https://en.wikipedia.org/wiki/Akhenaten',
 		stats: {

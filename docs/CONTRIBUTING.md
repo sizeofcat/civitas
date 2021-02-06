@@ -1,6 +1,5 @@
 # Contributing
 
-
 First thank you for considering contributing to Civitas!
 
 ## Table of Contents

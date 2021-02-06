@@ -24,7 +24,8 @@ class ui_panel_building extends ui_panel {
 			let core = this.core();
 			let building = core.get_settlement().get_building(this.params_data.handle);
 			if (building) {
-				$(this.handle + ' section').empty().append(core.ui().building_panel(this.params_data, building.level));
+				$(this.handle + ' section').empty()
+					.append(core.ui().building_panel(this.params_data, building.level));
 			} else {
 				this.destroy();
 			}

@@ -26,7 +26,8 @@ class place {
 		this.properties.id = params.properties.id;
 		this.properties.sid = params.properties.sid;
 		this.properties.scouted = params.properties.scouted;
-		this.properties.name = (typeof params.properties.name !== 'undefined') ? params.properties.name: game.get_random_unique(game.PLACES_NAMES);
+		this.properties.name = (typeof params.properties.name !== 'undefined') ?
+			params.properties.name: game.get_random_unique(game.PLACES_NAMES);
 		this.location = params.location;
 		this.resources = params.resources;
 		this.core().world().add_place(this);
